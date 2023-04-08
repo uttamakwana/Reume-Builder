@@ -26,10 +26,10 @@ app.use(express.static(path.join(__dirname , "./client/build")));
 // POST route for PDF generation....
 app.post("/api/create-pdf", (req, res) => {
 	console.log(req.body);
-
 	pdf.create(pdfTemplate(req.body)).toStream((err, stream) => {
 		if (err) {
 		  console.log(err);
+
 		  res.send(Promise.reject());
 		} else {
 		  res.setHeader("Content-Type", "application/pdf");
@@ -53,3 +53,4 @@ app.get("*" , (_ , res)=>{
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Server started on port ${port}`));
+
