@@ -4,7 +4,8 @@
 	"description": "Resume Builder Application using ReactJS(frontend) and NodeJS(backend)",
 	"main": "server.js",
 	"scripts": {
-		"client-install": "npm install --prefix client",
+		"both" : "concurrently \"npm install\" \"node node_modules/puppeteer/install.js\"",
+		"client-install": "npm install --prefix client ",
 		"start": "node server.js",
 		"server": "nodemon server.js",
 		"client": "npm start --prefix client",
