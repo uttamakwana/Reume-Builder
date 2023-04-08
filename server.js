@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const pdf = require("html-pdf");
 const cors = require("cors");
+const puppeteer = require('puppeteer');
 const path = require("path");
 const app = express();
 
@@ -24,20 +24,32 @@ const pdfTemplate = require("./documents/index.js");
 app.use(express.static(path.join(__dirname , "./client/build")));
 
 // POST route for PDF generation....
-app.post("/api/create-pdf", (req, res) => {
-	console.log(req.body);
-	pdf.create(pdfTemplate(req.body)).toStream((err, stream) => {
-		if (err) {
-		  console.log(err);
+// app.post("/api/create-pdf", (req, res) => {
+// 	console.log(req.body);
+// 	pdf.create(pdfTemplate(req.body)).toStream((err, stream) => {
+// 		if (err) {
+// 		  console.log(err);
 
-		  res.send(Promise.reject());
-		} else {
-		  res.setHeader("Content-Type", "application/pdf");
-		  res.setHeader("Content-Disposition", `attachment; filename=${req.body.firstname}'s Resume.pdf` );
-		  stream.pipe(res);
-		}
-	  });
-});
+// 		  res.send(Promise.reject());
+// 		} else {
+// 		  res.setHeader("Content-Type", "application/pdf");
+// 		  res.setHeader("Content-Disposition", `attachment; filename=${req.body.firstname}'s Resume.pdf` );
+// 		  stream.pipe(res);
+// 		}
+// 	  });
+// });
+
+app.post("/api/create-pdf", async (req, res) => {
+	console.log(req.body);
+	const browser = await puppeteer.launch();
+	const page = await browser.newPage();
+	await page.setContent(pdfTemplate(req.body));
+	const pdfBuffer = await page.pdf({ format: 'A4' });
+	res.setHeader("Content-Type", "application/pdf");
+	res.setHeader("Content-Disposition", `attachment; filename=${req.body.firstname}'s Resume.pdf` );
+	res.send(pdfBuffer);
+	await browser.close();
+ });
 
 
 app.get("/api" , (req,res)=>{
