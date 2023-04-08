@@ -5,24 +5,23 @@ const cors = require("cors");
 const path = require("path");
 const app = express();
 
-app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-	next();
-  });
-const corsOptions = {
-    origin:  'http://localhost:3000',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type']
-};
-app.use(cors(corsOptions));
+// *this is use only when you get CROS error
+// app.use(function(req, res, next) {
+// 	res.header("Access-Control-Allow-Origin", "*");
+// 	next();
+//   });
+
+// const corsOptions = {
+//     origin:  'http://localhost:3000',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type']
+// };
+// app.use(cors(corsOptions));
+
+
 app.use(bodyParser.json());
 const pdfTemplate = require("./documents/index.js");
-
-
 app.use(express.static(path.join(__dirname , "./client/build")));
-
-// allow requests from your frontend domain
-
 
 // POST route for PDF generation....
 app.post("/api/create-pdf", (req, res) => {
@@ -45,6 +44,7 @@ app.get("/api" , (req,res)=>{
 	res.send({msg:"Api working properly"});
 })
 
+// allow requests from your frontend domain
 app.get("*" , (_ , res)=>{
 	res.sendFile(path.join(__dirname , "./client/build/index.html") , (err)=>{
 		if(err) res.status(500).send(err);
