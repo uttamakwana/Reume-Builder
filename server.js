@@ -21,8 +21,9 @@ const app = express();
 
 app.use(bodyParser.json());
 const pdfTemplate = require("./documents/index.js");
-app.use(express.static(path.join(__dirname , "./client/build")));
+app.use(express.static(path.resolve(__dirname , "client" , "build")));
 
+console.log(path.resolve(__dirname , "client" , "build"));
 // POST route for PDF generation....
 // app.post("/api/create-pdf", (req, res) => {
 // 	console.log(req.body);
@@ -58,7 +59,7 @@ app.get("/api" , (req,res)=>{
 
 // allow requests from your frontend domain
 app.get("*" , (_ , res)=>{
-	res.sendFile(path.join(__dirname , "./client/build/index.html") , (err)=>{
+	res.sendFile(path.resolve(__dirname , "client" , "build" , "index.html") , (err)=>{
 		if(err) res.status(500).send(err);
 	})
 })
