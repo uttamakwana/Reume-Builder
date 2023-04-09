@@ -4,6 +4,7 @@ const cors = require("cors");
 const puppeteer = require('puppeteer');
 const path = require("path");
 const app = express();
+require("dotenv").config();
 
 // *this is use only when you get CROS error
 // app.use(function(req, res, next) {
@@ -21,9 +22,9 @@ const app = express();
 
 app.use(bodyParser.json());
 const pdfTemplate = require("./documents/index.js");
-app.use(express.static(path.resolve(__dirname , "client" , "build")));
+app.use(express.static(path.resolve(__dirname, "client", "build")));
 
-console.log(path.resolve(__dirname , "client" , "build"));
+console.log(path.resolve(__dirname, "client", "build"));
 // POST route for PDF generation....
 // app.post("/api/create-pdf", (req, res) => {
 // 	console.log(req.body);
@@ -42,25 +43,37 @@ console.log(path.resolve(__dirname , "client" , "build"));
 
 app.post("/api/create-pdf", async (req, res) => {
 	console.log(req.body);
-	const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({
+		args: [
+			"--disable-setuid-sandbox",
+			"--no-sandbox",
+			"--single-process",
+			"--no-zygote",
+		],
+		executablePath:
+			process.env.NODE_ENV === "production"
+				? process.env.PUPPETEER_EXECUTABLE_PATH
+				: puppeteer.executablePath(),
+
+	});
 	const page = await browser.newPage();
 	await page.setContent(pdfTemplate(req.body));
 	const pdfBuffer = await page.pdf({ format: 'A4' });
 	res.setHeader("Content-Type", "application/pdf");
-	res.setHeader("Content-Disposition", `attachment; filename=${req.body.firstname}'s Resume.pdf` );
+	res.setHeader("Content-Disposition", `attachment; filename=${req.body.firstname}'s Resume.pdf`);
 	res.send(pdfBuffer);
 	await browser.close();
- });
+});
 
 
-app.get("/api" , (req,res)=>{
-	res.send({msg:"Api working properly"});
+app.get("/api", (req, res) => {
+	res.send({ msg: "Api working properly" });
 })
 
 // allow requests from your frontend domain
-app.get("*" , (_ , res)=>{
-	res.sendFile(path.resolve(__dirname , "client" , "build" , "index.html") , (err)=>{
-		if(err) res.status(500).send(err);
+app.get("*", (_, res) => {
+	res.sendFile(path.resolve(__dirname, "client", "build", "index.html"), (err) => {
+		if (err) res.status(500).send(err);
 	})
 })
 
