@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ScrollToTop from './ScrollToTop';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class Projects extends Component {
@@ -13,12 +15,55 @@ class Projects extends Component {
     this.props.prevStep ();
   };
 
+  allFieldsFilled = () => {
+    const { values } = this.props;
+
+    // Check if all required fields have a value
+    if (
+      values.project_title1.trim() === "" ||
+      values.project_title2.trim() === "" ||
+      values.project_title3.trim() === "" ||
+      values.project_link1.trim() === "" ||
+      values.project_link2.trim() === "" ||
+      values.project_link3.trim() === "" ||
+      values.project_description1.trim() === "" ||
+      values.project_description2.trim() === "" ||
+      values.project_description3.trim() === "" ||
+      values.project_time1.trim() === "" ||
+      values.project_time2.trim() === "" ||
+      values.project_time3.trim() === ""
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
   render () {
     const {values} = this.props;
 
     return (
       <>
       <ScrollToTop />
+      <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          style={{
+            toast: {
+              fontSize: '16px',
+              fontWeight: 'bold',
+              backgroundColor: 'white',
+              color: '#ffff',
+            },
+          }}
+        />
       <div className="p-4 bg-clip-padding bg-gray-200 bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
         <div className="p-4">
               <h3 className="text-2xl font-extrabold  text-white">Project Details</h3>
@@ -199,12 +244,17 @@ class Projects extends Component {
                 >
                   Back
                 </button>
-                <button
-                  onClick={this.continue}
-                  className = "bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full"
-                >
+                {this.allFieldsFilled() ? (
+                <button className='bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full' onClick={this.continue}>
                   Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
                 </button>
+              ) : (
+                <button className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full ' onClick={()=>{toast.error('Please Fill all required Feilds..!');}}>
+                  Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
+                </button>
+              )}
           </div>
 
           <p className="text-center text-white opacity-[0.2]">Page 3</p>

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ScrollToTop from "./ScrollToTop";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 class AOTAchievement extends Component {
   continue = (e) => {
@@ -13,14 +16,53 @@ class AOTAchievement extends Component {
     this.props.prevStep();
   };
 
+  allFieldsFilled = () => {
+    const { values } = this.props;
+
+    // Check if all required fields have a value
+    if (
+      values.interest1.trim() === "" ||
+      values.interest2.trim() === "" ||
+      values.interest3.trim() === "" ||
+      values.achievement1.trim() === "" ||
+      values.achievement2.trim() === "" ||
+      values.prof_name1.trim() === "" ||
+      values.prof_link1.trim() === "" ||
+      values.prof_description1.trim() === ""
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
   render() {
     const { values } = this.props;
 
     return (
       <>
         <ScrollToTop />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          style={{
+            toast: {
+              fontSize: '16px',
+              fontWeight: 'bold',
+              backgroundColor: 'white',
+              color: '#ffff',
+            },
+          }}
+        />
         <div
-          className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto"
+          className="p-2 lg:p-3 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto"
           style={{ backdropFilter: "blur(20px)" }}
         >
           <div className="p-4">
@@ -147,7 +189,7 @@ class AOTAchievement extends Component {
               <br />
               <br />
 
-              
+
               <div className="flex flex-col">
                 <h5 className="text-white">
                   <CheckCircleIcon />
@@ -224,12 +266,17 @@ class AOTAchievement extends Component {
             >
               Back
             </button>
-            <button
-              onClick={this.continue}
-              className="bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full"
-            >
-              Next
-            </button>
+            {this.allFieldsFilled() ? (
+                <button className='bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full' onClick={this.continue}>
+                  Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
+                </button>
+              ) : (
+                <button className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full ' onClick={()=>{toast.error('Please Fill all required Feilds..!');}}>
+                  Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
+                </button>
+              )}
           </div>
         </div>
       </>

@@ -39,7 +39,7 @@ class Experience extends Component {
     return (
       <>
         <ScrollToTop />
-        <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
+        <div className="p-2 lg:p-3 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
           <div className="p-4">
             <h3 className="text-2xl font-extrabold  text-white">Extra Details - 2</h3>
           </div>

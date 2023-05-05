@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ScrollToTop from './ScrollToTop';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class Experience extends Component {
@@ -14,12 +16,56 @@ class Experience extends Component {
     this.props.prevStep();
   };
 
+  allFieldsFilled = () => {
+    const { values } = this.props;
+
+    // Check if all required fields have a value
+    if (
+      values.company1.trim() === "" ||
+      values.company2.trim() === "" ||
+      values.position1.trim() === "" ||
+      values.position2.trim() === "" ||
+      values.internship_link1.trim() === "" ||
+      values.internship_link2.trim() === "" ||
+      values.internship_start_year1.trim() === "" ||
+      values.internship_start_year2.trim() === "" ||
+      values.internship_end_year1.trim() === "" ||
+      values.internship_end_year2.trim() === "" ||
+      values.internship_description1.trim() === "" ||
+      values.internship_description2.trim() === ""
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
   render() {
     const { values } = this.props;
 
     return (
       <>
       <ScrollToTop />
+      <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          style={{
+            toast: {
+              fontSize: '16px',
+              fontWeight: 'bold',
+              backgroundColor: 'white',
+              color: '#ffff',
+            },
+          }}
+        />
+
       <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
         <div className="p-4">
           <h3 className="text-2xl font-extrabold  text-white">Internship / Experience Details</h3>
@@ -138,7 +184,7 @@ class Experience extends Component {
                   name="internship_link2"
                   placeholder="Link 2"
                   style={{ width: '90%' }}
-                  
+
                   value={values.internship_link2}
                   onChange={this.props.handleChange}
                 />
@@ -246,12 +292,17 @@ class Experience extends Component {
                 >
                   Back
                 </button>
-                <button
-                  onClick={this.continue}
-                  className = "bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full"
-                >
+                {this.allFieldsFilled() ? (
+                <button className='bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full' onClick={this.continue}>
                   Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
                 </button>
+              ) : (
+                <button className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full ' onClick={()=>{toast.error('Please Fill all required Feilds..!');}}>
+                  Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
+                </button>
+              )}
           </div>
 
           <p className="text-center text-white opacity-[0.2]">Page 4</p>

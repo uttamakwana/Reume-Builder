@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ScrollToTop from "./ScrollToTop";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Profile extends Component {
 
@@ -11,18 +13,54 @@ class Profile extends Component {
     e.preventDefault();
     this.props.nextStep();
   };
-  
+
   back = (e) => {
     e.preventDefault();
     this.props.prevStep();
   };
-  
+
+  allFieldsFilled = () => {
+    const { values } = this.props;
+
+    // Check if all required fields have a value
+    if (
+      values.college.trim() === "" ||
+      values.university.trim() === "" ||
+      values.degree.trim() === "" ||
+      values.degree_end_year.trim() === "" ||
+      values.degree_start_year.trim() === ""
+    ) {
+      return false;
+    }
+
+    return true;
+  };
+
   render() {
     const { values } = this.props;
     console.log(this.state.isDiploma);
     return (
       <>
         <ScrollToTop />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          style={{
+            toast: {
+              fontSize: '16px',
+              fontWeight: 'bold',
+              backgroundColor: 'white',
+              color: '#ffff',
+            },
+          }}
+        />
         <div className="mt-10">
           <div
             className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto"
@@ -137,7 +175,7 @@ class Profile extends Component {
 
             <hr className="border borde-white" />
 
-              
+
             <div className="p-4">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
 
@@ -346,12 +384,17 @@ class Profile extends Component {
               >
                 Back
               </button>
-              <button
-                onClick={this.continue}
-                className="bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full"
-              >
-                Next
-              </button>
+              {this.allFieldsFilled() ? (
+                <button className='bg-white hover:bg-red-700 text-black font-bold py-2 px-4 rounded-full' onClick={this.continue}>
+                  Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
+                </button>
+              ) : (
+                <button className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full ' onClick={()=>{toast.error('Please Fill all required Feilds..!');}}>
+                  Next
+                  <i className="fa fa-long-arrow-right ml-1"></i>
+                </button>
+              )}
             </div>
 
             <p className="text-center text-white opacity-[0.2]">Page 2</p>

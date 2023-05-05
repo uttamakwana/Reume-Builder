@@ -5,6 +5,7 @@ import Projects from "./Projects";
 import Experience from "./Experience";
 import Extras from "./Extras";
 import Extra2 from "./Extra2";
+import axios from "axios";
 
 export class Resume extends Component {
   state = {
@@ -121,8 +122,32 @@ export class Resume extends Component {
     });
   };
 
-  handleChange = ({ target: { value, name } }) => {
-    this.setState({ [name]: value });
+  handleChange = ({ target: { value, name }, target }) => {
+    if (name === "profile_img_url") {
+      this.setState({
+        selectedFile: target.files[0],
+      });
+
+      const formData = new FormData();
+      formData.append("file", target.files[0]);
+      formData.append("upload_preset", "resume_builder_collection");
+
+      axios
+        .post(
+          "https://api.cloudinary.com/v1_1/dllxcv4s8/image/upload",
+          formData
+        )
+        .then((response) => {
+          this.setState({
+            profile_img_url: response.data.url,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      this.setState({ [name]: value });
+    }
   };
 
   render() {
@@ -138,7 +163,7 @@ export class Resume extends Component {
          linkedin,
          address,
          profile_img_url,
-     
+
          // Education Information
          college,
          university,
@@ -155,7 +180,7 @@ export class Resume extends Component {
          diploma_place,
          diploma_start_year,
          diploma_end_year,
-     
+
          // Project Information...
          project_title1,
          project_link1,
@@ -169,7 +194,7 @@ export class Resume extends Component {
          project_link3,
          project_time3,
          project_description3,
-   
+
          // Experience Information
          company1,
          position1,
@@ -189,7 +214,7 @@ export class Resume extends Component {
          internship_start_year3,
          internship_end_year3,
          internship_description3,
-     
+
          // Extra Information
          skill1,
          skill2,
@@ -203,7 +228,7 @@ export class Resume extends Component {
          pl4,
          pl5,
          pl6,
-   
+
          // Extra information - 2
          achievement1,
          achievement2,
@@ -215,7 +240,7 @@ export class Resume extends Component {
          interest4,
          interest5,
          interest6,
-   
+
          // References
          prof_name1,
          prof_link1,
@@ -227,7 +252,7 @@ export class Resume extends Component {
     const values = {
       // Profile-Information
       // Profile-Information
-      
+
          // Profile-Information
          firstname,
          lastname,
@@ -238,7 +263,7 @@ export class Resume extends Component {
          linkedin,
          address,
          profile_img_url,
-     
+
          // Education Information
          college,
          university,
@@ -255,7 +280,7 @@ export class Resume extends Component {
          diploma_place,
          diploma_start_year,
          diploma_end_year,
-     
+
          // Project Information...
          project_title1,
          project_link1,
@@ -269,7 +294,7 @@ export class Resume extends Component {
          project_link3,
          project_time3,
          project_description3,
-   
+
          // Experience Information
          company1,
          position1,
@@ -289,7 +314,7 @@ export class Resume extends Component {
          internship_start_year3,
          internship_end_year3,
          internship_description3,
-     
+
          // Extra Information
          skill1,
          skill2,
@@ -303,7 +328,7 @@ export class Resume extends Component {
          pl4,
          pl5,
          pl6,
-   
+
          // Extra information - 2
          achievement1,
          achievement2,
@@ -315,7 +340,7 @@ export class Resume extends Component {
          interest4,
          interest5,
          interest6,
-   
+
          // References
          prof_name1,
          prof_link1,
