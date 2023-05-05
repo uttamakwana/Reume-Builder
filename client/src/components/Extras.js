@@ -18,7 +18,7 @@ class Experience extends Component {
 
   createAndDownloadPDF = () => {
     axios
-      .post("http://localhost:4000/api/create-pdf", this.props.values, {
+      .post("/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
