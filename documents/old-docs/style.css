@@ -1,0 +1,161 @@
+        @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,100;1,400;1,700;1,900&family=Montserrat:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;1,200;1,300;1,500;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,800;1,900&family=Tilt+Neon&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+        *,
+        *::before,
+        *::after {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+      .main-heading h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.2rem;
+        border-bottom: 2px solid rgb(58, 58, 58) ;
+        display: inline;
+      }
+      .main-fonts{
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      .main-heading {
+        margin-bottom: 0.5rem;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 0;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        outline: 2px solid black;
+      }
+      .up {
+        padding: 0.5rem;
+        display: flex;
+        gap: 0.5rem;
+        border-bottom: 3px solid black;
+        background-color: #4DD0E1;
+      }
+      .up .profile-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        border-right: 3px dashed black;
+        padding-right: 2rem;
+      }
+      .profile-img{
+        height: 100px;
+        width: 100px;
+        border: 1px solid blue;
+        margin-right: .5rem;
+        border-radius: 5px;
+        padding: .2rem;
+      }
+      .profile-img img{
+        max-height: 100%;
+        width: 100%;
+        outline: 1px solid green;
+        object-fit: cover;
+      }
+      .up .profile-container h1 {
+        font-family: "Poppins", sans-serif;
+      }
+      .phone, .email, .linkedin, .address, .website, .github {
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .down {
+        display: flex;
+        flex-direction: column;
+      }
+      .even {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0.3rem;
+        border-bottom: 3px solid black;
+      }
+      .even:last-child {
+        border: none;
+      }
+      .odd {
+        display: flex;
+        padding: 0.3rem;
+        border-bottom: 3px solid black;
+      }
+      .education-container, .skills-container, .area-of-interest-container{
+        border-right: 2px dashed black;
+      }
+      .degree, .boards {
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .education-info span{
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .programming-language-container, .major-achievements-container, .references-container  {
+        padding-left: 0.5rem;
+      }
+      .programming-languages, .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .programming-language, .skill {
+        font-weight: 600;
+        font-size: 0.6rem;
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      .personal-project-name strong {
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .personal-project-desc p {
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .internship-experience-name strong {
+        font-size: 0.9rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .internship-experience-desc p{
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .major-achievements{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .achievement{
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      .area-of-interest-even{
+        display: flex;
+        gap: .5rem;
+      }
+      .area {
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      .reference p strong,
+      .reference p span, .area, .achievement{
+        font-size: 0.8rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      .reference p strong{
+        font-weight: 600;
+      }

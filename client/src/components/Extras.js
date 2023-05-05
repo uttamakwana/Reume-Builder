@@ -18,17 +18,18 @@ class Experience extends Component {
 
   createAndDownloadPDF = () => {
     axios
-      .post('api/create-pdf', this.props.values, {
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
         }
       })
       .then(res => {
+        console.log(res.data);
         saveAs(res.data, `${this.props.values.firstname}'s Resume.pdf`);
       })
       .catch(err => {
-        console.log(err);
+        console.log(err, "Uttam Makwadfsdfna");
       })
   };
 
@@ -40,14 +41,14 @@ class Experience extends Component {
         <ScrollToTop />
         <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
           <div className="p-4">
-            <h3 className="text-2xl font-extrabold  text-white">Extra Details</h3>
+            <h3 className="text-2xl font-extrabold  text-white">Extra Details - 2</h3>
           </div>
           <div>
             <div>
               <div className='flex flex-col'>
                 <h5 className='text-white'>
                   <CheckCircleIcon />
-                  <span className="pl-3">Skills/Languages</span>
+                  <span className="pl-3">Skills</span>
                 </h5>
                 <br />
                 <div className='flex flex-wrap items-center justify-center'>
@@ -114,61 +115,61 @@ class Experience extends Component {
               <div className='flex flex-col'>
                 <h5 className='text-white'>
                   <CheckCircleIcon />
-                  <span className="pl-3">interest</span>
+                  <span className="pl-3">Programming Languages</span>
                 </h5>
                 <br />
                 <div className='flex flex-wrap items-center justify-center'>
                   <div className='m-3'>
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      name="interest1"
-                      placeholder="interest 1"
-                      value={values.interest1}
+                      name="pl1"
+                      placeholder="PL1"
+                      value={values.pl1}
                       onChange={this.props.handleChange}
                     />
                   </div>
                   <div className='m-3' >
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      name="interest2"
-                      placeholder="interest 2"
-                      value={values.interest2}
+                      name="pl2"
+                      placeholder="PL2"
+                      value={values.pl2}
                       onChange={this.props.handleChange}
                     />
                   </div>
                   <div className='m-3'>
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      name="interest3"
-                      placeholder="interest 3"
-                      value={values.interest3}
+                      name="pl3"
+                      placeholder="PL3"
+                      value={values.pl3}
                       onChange={this.props.handleChange}
                     />
                   </div>
                   <div className='m-3'>
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      name="interest4"
-                      placeholder="interest 4"
-                      value={values.interest4}
+                      name="pl4"
+                      placeholder="PL4"
+                      value={values.pl4}
                       onChange={this.props.handleChange}
                     />
                   </div>
                   <div className='m-3'>
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      name="interest5"
-                      placeholder="interest 5"
-                      value={values.interest5}
+                      name="pl5"
+                      placeholder="PL5"
+                      value={values.pl5}
                       onChange={this.props.handleChange}
                     />
                   </div>
                   <div className='m-3'>
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                      name="interest6"
-                      placeholder="interest6"
-                      value={values.interest6}
+                      name="pl6"
+                      placeholder="PL6"
+                      value={values.pl6}
                       onChange={this.props.handleChange}
                     />
                   </div>

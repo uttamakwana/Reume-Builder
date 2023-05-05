@@ -8,9 +8,6 @@ module.exports = (values) => {
     website,
     github,
     linkedin,
-    twitter,
-    facebook,
-    instagram,
 
     // Education Information
     college,

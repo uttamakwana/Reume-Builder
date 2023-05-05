@@ -6,18 +6,18 @@ const path = require("path");
 const app = express();
 require("dotenv").config();
 
-// *this is use only when you get CROS error
-// app.use(function(req, res, next) {
-// 	res.header("Access-Control-Allow-Origin", "*");
-// 	next();
-//   });
+// !this is use only when you get CROS error
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	next();
+  });
 
-// const corsOptions = {
-//     origin:  'http://localhost:3000',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type']
-// };
-// app.use(cors(corsOptions));
+const corsOptions = {
+    origin:  'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+};
+app.use(cors(corsOptions));
 
 
 app.use(bodyParser.json());
@@ -26,12 +26,11 @@ app.use(express.static(path.resolve(__dirname, "client", "build")));
 
 console.log(path.resolve(__dirname, "client", "build"));
 // POST route for PDF generation....
-// app.post("/api/create-pdf", (req, res) => {
+// app.post("api/create-pdf", (req, res) => {
 // 	console.log(req.body);
 // 	pdf.create(pdfTemplate(req.body)).toStream((err, stream) => {
 // 		if (err) {
-// 		  console.log(err);
-
+// 		  console.log(err, "Uttam Makwana");
 // 		  res.send(Promise.reject());
 // 		} else {
 // 		  res.setHeader("Content-Type", "application/pdf");
@@ -73,7 +72,7 @@ app.get("/api", (req, res) => {
 // allow requests from your frontend domain
 app.get("*", (_, res) => {
 	res.sendFile(path.resolve(__dirname, "client", "build", "index.html"), (err) => {
-		if (err) res.status(500).send(err);
+		if (err) {res.status(500).send(err); console.log("Errors!!")};
 	})
 })
 

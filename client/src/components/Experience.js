@@ -22,24 +22,24 @@ class Experience extends Component {
       <ScrollToTop />
       <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
         <div className="p-4">
-          <h3 className="text-2xl font-extrabold  text-white">Experience Details</h3>
+          <h3 className="text-2xl font-extrabold  text-white">Internship / Experience Details</h3>
         </div>
         <div>
           <div className="">
             <div className='w-[100%]'>
               <h5 className='text-white'>
                 <CheckCircleIcon />
-                <span className="pl-3">Experience 1</span>
+                <span className="pl-3">Internship / Experience - 1</span>
               </h5>
               <div className='flex flex-col' />
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="institute1"
-                  placeholder="Institue/Organisation*"
+                  name="company1"
+                  placeholder="Institue/Organisation/Company*"
                   style={{ width: '90%' }}
                   required
-                  value={values.institute1}
+                  value={values.company1}
                   onChange={this.props.handleChange}
                 />
               </div>
@@ -52,6 +52,27 @@ class Experience extends Component {
                   required
                   value={values.position1}
                   onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="internship_link1"
+                  placeholder="Link 1"
+                  style={{ width: '90%' }}
+                  value={values.internship_link1}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="internship_start_year1"
+                  placeholder="Start year*"
+                  style={{ width: '90%' }}
+                  required
+                  value={values.internship_start_year1}
+                  onChange={this.props.handleChange}
 
                 />
               </div>
@@ -59,11 +80,11 @@ class Experience extends Component {
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="duration1"
-                  placeholder="Duration*"
+                  name="internship_end_year1"
+                  placeholder="End year*"
                   style={{ width: '90%' }}
                   required
-                  value={values.duration1}
+                  value={values.internship_end_year1}
                   onChange={this.props.handleChange}
                 />
               </div>
@@ -73,9 +94,9 @@ class Experience extends Component {
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   placeholder='Description*'
                   style={{ width: '90%' }}
-                  name="experienceDescription1"
+                  name="internship_description1"
                   required
-                  value={values.experienceDescription1}
+                  value={values.internship_description1}
                   onChange={this.props.handleChange}
                 />
               </div>
@@ -84,6 +105,82 @@ class Experience extends Component {
             <hr className='border broder-white' />
             <br />
             <div className='w-[100%]'>
+              <h5 className='text-white'>
+                <CheckCircleIcon />
+                <span className="pl-3">Internship / Experience - 2</span>
+              </h5>
+              <div className='flex flex-col' />
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="company2"
+                  placeholder="Institue/Organisation/Company*"
+                  style={{ width: '90%' }}
+                  required
+                  value={values.company2}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="position2"
+                  placeholder="Position*"
+                  style={{ width: '90%' }}
+                  required
+                  value={values.position2}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="internship_link2"
+                  placeholder="Link 2"
+                  style={{ width: '90%' }}
+                  
+                  value={values.internship_link2}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="internship_start_year2"
+                  placeholder="Start year*"
+                  style={{ width: '90%' }}
+                  required
+                  value={values.internship_start_year2}
+                  onChange={this.props.handleChange}
+
+                />
+              </div>
+
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="internship_end_year2"
+                  placeholder="End year*"
+                  style={{ width: '90%' }}
+                  required
+                  value={values.internship_end_year2}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  placeholder='Description*'
+                  style={{ width: '90%' }}
+                  name="internship_description2"
+                  required
+                  value={values.internship_description2}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+            </div>
+            {/* <div className='w-[100%]'>
               <h5 className='text-white'>
                 <CheckCircleIcon />
                 <span className="pl-3">Experience 2</span>
@@ -136,7 +233,7 @@ class Experience extends Component {
                   onChange={this.props.handleChange}
                 />
               </div>
-            </div>
+            </div> */}
             <br />
             <hr className='border broder-white' />
             <br />

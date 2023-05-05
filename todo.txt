@@ -1,0 +1,4 @@
+1. Responsive Design
+2. Correct Placeholder 
+3. Conditions on buttons (if no field is filled then no next!)
+4. Toasting for review and errors!

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ScrollToTop from './ScrollToTop';
 
-
-
-
 class Profile extends Component {
   continue = e => {
     e.preventDefault();
@@ -49,6 +46,8 @@ class Profile extends Component {
                 onChange={this.props.handleChange}
               />
             </div>
+
+            
 
             <div>
               <label className="block text-white font-bold mb-2">Email</label>
@@ -105,12 +104,12 @@ class Profile extends Component {
 
             <div>
               <label className="block text-white font-bold mb-2">
-                Linked In
+                LinkedIn
               </label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="url"
-                placeholder="Linked In"
+                placeholder="LinkedIn"
                 name="linkedin"
                 value={values.linkedin}
                 onChange={this.props.handleChange}
@@ -119,19 +118,34 @@ class Profile extends Component {
 
             <div>
               <label className="block text-white font-bold mb-2">
-                Twitter
+                Address
               </label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                type="url"
-                placeholder="Twitter"
-                name="twitter"
-                value={values.twitter}
+                type="text"
+                placeholder="Ex. Gandhinagar"
+                name="address"
+                value={values.address}
                 onChange={this.props.handleChange}
               />
             </div>
 
           </div>
+
+          <div className='my-3'>
+              <label className="block text-white font-bold mb-2">
+                Image
+              </label>
+              <input
+                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white"
+                type="file"
+                name="profile_img_url"
+                required
+                value={values.profile_img_url}
+                accept='image/*'
+                onChange={this.props.handleChange}
+              />
+            </div>
 
           <div className="m-3 mt-5 flex justify-between">
                 <button

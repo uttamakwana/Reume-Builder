@@ -21,7 +21,7 @@ class Projects extends Component {
       <ScrollToTop />
       <div className="p-4 bg-clip-padding bg-gray-200 bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
         <div className="p-4">
-              <h3 className="text-2xl font-extrabold  text-white">Project Developed</h3>
+              <h3 className="text-2xl font-extrabold  text-white">Project Details</h3>
             </div>
         <div>
           <div className='w-[90%] m-auto'>
@@ -32,34 +32,47 @@ class Projects extends Component {
               <div className='my-3'>
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="title1"
+                  name="project_title1"
                   placeholder='Title*'
-                  label="Title"
+                  label="project_title1"
                   required
-                  value={values.title1}
+                  value={values.project_title1}
                   onChange={this.props.handleChange}
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="link1"
-                  label="Link"
+                  name="project_link1"
+                  label="project_link1"
                   placeholder='Link*'
                   style={{width: '80%'}}
                   required
-                  value={values.link1}
+                  type="url"
+                  value={values.project_link1}
                   onChange={this.props.handleChange}
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="projectDescription1"
+                  name="project_time1"
+                  placeholder="Ex. April 2023"
+                  type='month'
+                  style={{width: '80%'}}
+                  required
+                  value={values.project_time1}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="project_description1"
                   placeholder="Description*"
                   style={{width: '80%'}}
                   required
-                  value={values.projectDescription1}
+                  value={values.project_description1}
                   onChange={this.props.handleChange}
                 />
               </div>
@@ -74,34 +87,47 @@ class Projects extends Component {
               <div className='my-3'>
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="title2"
+                  name="project_title2"
                   placeholder='Title*'
-                  label="Title"
+                  label="project_title2"
                   required
-                  value={values.title2}
+                  value={values.project_title2}
                   onChange={this.props.handleChange}
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="link2"
-                  label="Link"
+                  name="project_link2"
+                  type='url'
+                  label="project_link2"
                   placeholder='Link*'
                   style={{width: '80%'}}
                   required
-                  value={values.link2}
+                  value={values.project_link2}
                   onChange={this.props.handleChange}
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="projectDescription2"
+                  name="project_time2"
+                  placeholder="Ex. May 2020*"
+                  type='month'
+                  style={{width: '80%'}}
+                  required
+                  value={values.project_time2}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="project_description2"
                   placeholder="Description*"
                   style={{width: '80%'}}
                   required
-                  value={values.projectDescription2}
+                  value={values.project_description2}
                   onChange={this.props.handleChange}
                 />
               </div>
@@ -116,34 +142,46 @@ class Projects extends Component {
               <div className='my-3'>
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="title3"
+                  name="project_title3"
                   placeholder='Title*'
-                  label="Title"
+                  label="project_title3"
                   required
-                  value={values.title3}
+                  value={values.project_title3}
                   onChange={this.props.handleChange}
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="link3"
-                  label="Link"
+                  name="project_link3"
+                  label="project_link3"
                   placeholder='Link*'
                   style={{width: '80%'}}
                   required
-                  value={values.link3}
+                  value={values.project_link3}
                   onChange={this.props.handleChange}
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  name="projectDescription3"
+                  name="project_time3"
+                  placeholder="Ex. June 2017"
+                  type='month'
+                  style={{width: '80%'}}
+                  required
+                  value={values.project_time3}
+                  onChange={this.props.handleChange}
+                />
+              </div>
+              <div className='my-3'>
+                <input
+                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  name="project_description3"
                   placeholder="Description*"
                   style={{width: '80%'}}
                   required
-                  value={values.projectDescription3}
+                  value={values.project_description3}
                   onChange={this.props.handleChange}
                 />
               </div>
@@ -169,7 +207,7 @@ class Projects extends Component {
                 </button>
           </div>
 
-          <p className="text-center text-white opacity-[0.2]">Page 2</p>
+          <p className="text-center text-white opacity-[0.2]">Page 3</p>
       </div>
       </>
     );

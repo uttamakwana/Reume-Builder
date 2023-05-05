@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html{
   scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  font-family: monospace !important;
-  height: 170vh;
+  /* height: 100vh; */
   background-image: linear-gradient(to right top, #0c182a, #011e29, #082223, #17241d, #23261d);
+ 
+  
 }

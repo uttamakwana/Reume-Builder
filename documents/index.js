@@ -8,42 +8,59 @@ module.exports = (values) => {
     website,
     github,
     linkedin,
-    twitter,
-    facebook,
-    instagram,
+    address,
+    profile_img_url,
 
     // Education Information
     college,
-    fromyear1,
-    toyear1,
-    qualification1,
-    description1,
-    school,
-    fromyear2,
-    toyear2,
-    qualification2,
-    description2,
+    university,
+    degree_start_year,
+    degree_end_year,
+    degree,
+    ssc,
+    ssc_school,
+    ssc_year,
+    hsc,
+    hsc_school,
+    hsc_year,
+    diploma,
+    diploma_place,
+    diploma_start_year,
+    diploma_end_year,
 
     // Project Information...
-    title1,
-    link1,
-    projectDescription1,
-    title2,
-    link2,
-    projectDescription2,
-    title3,
-    link3,
-    projectDescription3,
+    project_title1,
+    project_link1,
+    project_time1,
+    project_description1,
+    project_title2,
+    project_link2,
+    project_time2,
+    project_description2,
+    project_title3,
+    project_link3,
+    project_time3,
+    project_description3,
 
     // Experience Information
-    institute1,
+    company1,
     position1,
-    duration1,
-    experienceDescription1,
-    institute2,
+    internship_link1,
+    internship_start_year1,
+    internship_end_year1,
+    internship_description1,
+    company2,
     position2,
-    duration2,
-    experienceDescription2,
+    internship_link2,
+    internship_start_year2,
+    internship_end_year2,
+    internship_description2,
+    company3,
+    position3,
+    internship_link3,
+    internship_start_year3,
+    internship_end_year3,
+    internship_description3,
 
     // Extra Information
     skill1,
@@ -52,391 +69,661 @@ module.exports = (values) => {
     skill4,
     skill5,
     skill6,
+    pl1,
+    pl2,
+    pl3,
+    pl4,
+    pl5,
+    pl6,
+
+    // Extra information - 2
+    achievement1,
+    achievement2,
+    achievement3,
+    achievement4,
     interest1,
     interest2,
     interest3,
     interest4,
     interest5,
     interest6,
+
+    // References
+    prof_name1,
+    prof_link1,
+    prof_description1,
+    prof_name2,
+    prof_link2,
+    prof_description2,
   } = values;
 
   let htmlTemplate = `
-  <!DOCTYPE html>
-    <html>
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
-    <title>${firstname}'s Resume</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,600&display=swap" rel="stylesheet">
-	<style>
-	* {
-		box-sizing: border-box;
-		transition: 0.35s ease;
-		font-style: normal;
-	  }
-	  .rela-block {
-		width: 100%;
-		display: block;
-		position: relative;
-		margin: auto;
-		top: ;
-		left: ;
-		right: ;
-		bottom: ;
-		font-style: normal;
-	  }
-	  .rela-inline {
-		display: inline-block;
-		position: relative;
-		margin: auto;
-		top: ;
-		left: ;
-		right: ;
-		bottom: ;
-		font-style: normal;
-	  }
-	  .floated {
-		display: inline-block;
-		position: relative;
-		margin: false;
-		top: ;
-		left: ;
-		right: ;
-		bottom: ;
-		float: left;
-	  }
-	  .abs-center {
-		display: false;
-		position: absolute;
-		margin: false;
-		top: 50%;
-		left: 50%;
-		right: false;
-		bottom: false;
-		-webkit-transform: translate(-50%, -50%);
-				transform: translate(-50%, -50%);
-		text-align: center;
-		width: 88%;
-		font-style: normal;
-	  }
-	  body {
-		font-family: 'Roboto Slab';
-		font-size: 18px;
-		letter-spacing: 0px;
-		font-weight: 400;
-		line-height: 28px;
-		background-size: cover;
-		font-style: normal;
-	  }
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Resume Builder | GLP Community</title>
+      <script
+        src="https://kit.fontawesome.com/8a1a8282cc.js"
+        crossorigin="anonymous"
+      ></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,100;1,400;1,700;1,900&family=Montserrat:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;1,200;1,300;1,500;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,800;1,900&family=Tilt+Neon&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main-heading h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.2rem;
+      border-bottom: 2px solid rgb(58, 58, 58) ;
+      display: inline;
+      }
+    .main-fonts{
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    .main-heading {
+      margin-bottom: 0.5rem;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 0;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      outline: 2px solid black;
+      max-width: 7.1in;
+    }
+    .up {
+      padding: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 3px solid black;
+      background-color: #4DD0E1;
+    }
+    .up .profile-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-right: 3px dashed black;
+      padding-right: 2rem;
+    }
+    .profile-img{
+      height: 100px;
+      width: 100px;
+      border: 1px solid blue;
+      margin-right: .5rem;
+      border-radius: 5px;
+      padding: .2rem;
+    }
+    .profile-img img{
+      max-height: 100%;
+      width: 100%;
+      outline: 1px solid green;
+      object-fit: cover;
+    }
+    .up .profile-container h1 {
+      font-family: "Poppins", sans-serif;
+    }
+    .phone, .email, .linkedin, .address, .website, .github {
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+    }
+    .down {
+      display: flex;
+      flex-direction: column;
+    }
+    .even {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0.3rem;
+      border-bottom: 3px solid black;
+    }
+    .even:last-child {
+      border: none;
+    }
+    .odd {
+      display: flex;
+      padding: 0.3rem;
+      border-bottom: 3px solid black;
+    }
+    .education-container, .skills-container, .area-of-interest-container{
+      border-right: 2px dashed black;
+    }
+    .degree, .boards {
+      font-size: 0.9rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+    }
+    .education-info span{
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+    }
+    .programming-language-container, .major-achievements-container, .references-container  {
+      padding-left: 0.5rem;
+    }
+    .programming-languages, .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .programming-language, .skill {
+      font-weight: 600;
+      font-size: 0.6rem;
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    .personal-project-name strong {
+      font-size: 0.9rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+    }
+    .personal-project-desc p {
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+    }
+    .internship-experience-name strong {
+      font-size: 0.9rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+    }
+    .internship-experience-desc p{
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+    }
+    .major-achievements{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .achievement{
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    .area-of-interest-even{
+      display: flex;
+      gap: .5rem;
+    }
+    .area {
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    .reference p strong,
+    .reference p span, .area, .achievement{
+      font-size: 0.8rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    .reference p strong{
+      font-weight: 600;
+    }
 
-	  .caps {
-		text-transform: uppercase;
-	  }
-	  .justified {
-		text-align: justify;
-	  }
-	  p.light {
-		color: #777;
-		font-size: 14px;
-		font-style: normal;
-	  }
-	  h2 {
-		font-family: 'Roboto Slab', serif;
-		font-size: 30px;
-		letter-spacing: 5px;
-		font-weight: 600;
-		line-height: 40px;
-		color: #000;
-		font-style: normal;
-	  }
-	  h3 {
-		font-family: 'Roboto Slab', serif;
-		font-size: 21px;
-		letter-spacing: 1px;
-		font-weight: 600;
-		line-height: 28px;
-		color: #000;
-	  }
-	  .page {
-		width: 90%;
-		max-width: 1200px;
-		margin: 80px auto;
-		background-color: #fff;
-		box-shadow: 6px 10px 28px 0px rgba(0,0,0,0.4);
-	  }
-	  .top-bar {
-		height: 220px;
-		background-color: #848484;
-		color: #fff;
-	  }
-	  .name {
-		display: false;
-		position: absolute;
-		margin: false;
-		top: false;
-		left: calc(350px + 5%);
-		right: 0;
-		bottom: 0;
-		height: 120px;
-		text-align: center;
-		font-family: 'Roboto Slab';
-		font-size: 58px;
-		letter-spacing: 8px;
-		font-weight: 100;
-		line-height: 60px;
-		font-style: normal;
-	  }
-	  .name div {
-		width: 94%;
-	  }
-	  .side-bar {
-		display: false;
-		position: absolute;
-		margin: false;
-		top: 60px;
-		left: 2%;
-		right: false;
-		bottom: 0;
-		width: 380px;
-		background-color: #f7e0c1;
-		padding: 320px 30px 50px;
-	  }
-	  .mugshot {
-		display: false;
-		position: absolute;
-		margin: false;
-		top: 50px;
-		left: 70px;
-		right: false;
-		bottom: false;
-		height: 210px;
-		width: 210px;
-	  }
-	  .mugshot .logo {
-		margin: -23px;
-	  }
-	  .logo {
-		display: false;
-		position: absolute;
-		margin: false;
-		top: 0;
-		left: 0;
-		right: false;
-		bottom: false;
-		z-index: 100;
-		margin: 0;
-		color: #000;
-		height: 250px;
-		width: 250px;
-	  }
-	  .logo .logo-svg {
-		height: 100%;
-		width: 100%;
-		stroke: #000;
-		cursor: pointer;
-	  }
-	  .logo .logo-text {
-		display: false;
-		position: absolute;
-		margin: false;
-		top: 60%;
-		left: ;
-		right: 20%;
-		bottom: ;
-		cursor: pointer;
-		font-family: 'Roboto Slab', serif;
-		font-size: 60px;
-		letter-spacing: 0px;
-		font-weight: 400;
-		line-height: 58.333333333333336px;
-		font-style: normal;
-	  }
-	  .social {
-		padding-left: 10px;
-		margin-bottom: 0px;
-		cursor: pointer;
-	  }
+    a{
+      text-decoration: none;
+      color: black;
+    }
 
-	  .side-header {
-		font-family: 'Roboto Slab', serif;
-		font-size: 18px;
-		letter-spacing: 4px;
-		font-weight: 600;
-		line-height: 28px;
-		margin: 60px auto 10px;
-		padding-bottom: 5px;
-		border-bottom: 1px solid #888;
-	  }
-	  .list-thing {
-		padding-left: 20px;
-		margin-bottom: 5px;
-	  }
-	  .content-container {
-		margin-right: 0;
-		width: calc(95% - 350px);
-		padding: 25px 40px 50px;
-	  }
-	  .content-container > * {
-		margin: 0 auto 25px;
-	  }
-	  .content-container > h3 {
-		margin: 0 auto 5px;
-	  }
-	  .content-container > p.long-margin {
-		margin: 0 auto 50px;
-	  }
-	  .title {
-		width: 80%;
-		text-align: center;
-	  }
-	  .separator {
-		width: 300px;
-		height: 2px;
-		background-color: #999;
-	  }
-	  .greyed {
-		background-color: #ddd;
-		width: 100%;
-		max-width: 580px;
-		text-align: center;
-		font-family: 'Roboto Slab';
-		font-size: 18px;
-		letter-spacing: 6px;
-		font-weight: 600;
-		line-height: 28px;
-	  }
-	  @media screen and (max-width: 1150px) {
-		.name {
-		  color: #fff;
-		  font-family: 'Roboto Slab';
-		  font-size: 38px;
-		  letter-spacing: 6px;
-		  font-weight: 100;
-		  line-height: 48px;
-		}
-	  }
-	</style>
+      </style>
     </head>
-	<body>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <div class="rela-block page">
-        <div class="rela-block top-bar">
-			<div class="caps name"><div class="abs-center">${firstname} ${lastname}</div></div>
-        </div>
-        <div class="side-bar">
-            <div class="mugshot">
-                <div class="logo">
-                    <svg viewbox="0 0 80 80" class="rela-block logo-svg">
-                        <path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none"/>
-                    </svg>
-                    <p class="logo-text">${firstname[0]}${lastname[0]}</p>
-                </div>
-			</div>
-			<!--
-            <p class="mb-1">Address Line 1</p>
-            <p class="mb-1">Address Line 2</p>
-			<p class="mb-1">City, Country</p>
-			-->
-			<p class="mb-1"><span style="padding-right:10px;"><i class="fas fa-envelope"></i></span>${email}</p>`;
-  if (phone != "" && phone != null)
-    htmlTemplate += `<p class="mb-1"><span style="padding-right:10px;"><i class="fas fa-phone-square-alt"></i></span>${phone}</p>`;
-  if (skill1 != "" && skill1 != null)
-    htmlTemplate += `<p class="rela-block caps side-header">Skills</p>
-				<p class="rela-block list-thing">${skill1}</p>`;
-  if (skill2 != "" && skill2 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${skill2}</p>`;
-  if (skill3 != "" && skill3 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${skill3}</p>`;
-  if (skill4 != "" && skill4 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${skill4}</p>`;
-  if (skill5 != "" && skill5 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${skill5}</p>`;
-  if (skill6 != "" && skill6 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${skill6}</p>`;
-
-  if (interest1 != "" && interest1 != null)
-    htmlTemplate += `<p class="rela-block caps side-header">Interests</p>
-				<p class="rela-block list-thing">${interest1}</p>`;
-  if (interest2 != "" && interest2 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${interest2}</p>`;
-  if (interest3 != "" && interest3 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${interest3}</p>`;
-  if (interest4 != "" && interest4 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${interest4}</p>`;
-  if (interest6 != "" && interest6 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${interest5}</p>`;
-  if (interest6 != "" && interest6 != null)
-    htmlTemplate += `<p class="rela-block list-thing">${interest6}</p>`;
-
+    <body>
+      <main class="main">
+        <section class="up">
+          <div class="profile-container">
+            <div class="profile-img">
+              <img src=${profile_img_url} alt="User" />
+            </div>
+            <div class="profile-name">
+              <h1>${firstname}</h1>
+              <h1>${lastname}</h1>
+            </div>
+          </div>
+          <div class="profile-info-container">`;
+  if (phone != null && phone != "") {
+    htmlTemplate += `
+              <div class="profile-info">
+                <i class="fa-solid fa-phone"></i>&nbsp;:
+                <span class="phone">${phone}</span>
+              </div>
+              `;
+  }
+  if (email != null && email != "") {
+    htmlTemplate += `
+              <div class="profile-info">
+                <i class="fa-solid fa-envelope"></i>&nbsp;:
+                <span class="email"> ${email} </span>
+              </div>
+              `;
+  }
+  if (linkedin != "" && linkedin != null) {
+    htmlTemplate += `
+              <div class="profile-info">
+                <i class="fa-brands fa-linkedin"></i>&nbsp;:
+                <span class="linkedin"> ${linkedin} </span>
+              </div>
+              `;
+  }
+  if (address != "" && address != null) {
+    htmlTemplate += `
+              <div class="profile-info">
+                <i class="fa-solid fa-address-card"></i>&nbsp;:
+                <span class="address"> ${address} </span>
+              </div>
+              `;
+  }
+  if (website != "" && website != null) {
+    htmlTemplate += `
+               <div class="profile-info">
+                  <i class="fa-solid fa-earth-americas"></i>&nbsp;:
+                  <span class="website"> ${website} </span>
+              </div>
+              `;
+  }
+  if (github != "" && github != null) {
+    htmlTemplate += `
+              <div class="profile-info">
+                <i class="fa-brands fa-github"></i>&nbsp;:
+                <a href="https://github.com/${github}"> <span class="github"> ${github} </span></a>
+              </div>
+              `;
+  }
   htmlTemplate += `
-  			</div>
-			<div class="rela-block content-container">
-			<div class="rela-block caps greyed">Profile</div>`;
-  if (website != "" && website != null)
-    htmlTemplate += `<p class="rela-block social mb-0"><span style="padding-right: 15px; font-size="20px;"><i class="fas fa-globe"></i></span>${website}</p>`;
-  if (github != "" && github != null)
-    htmlTemplate += `<p class="rela-block social mb-0"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-github"></i></span>${github}</p>`;
-  if (linkedin != "" && linkedin != null)
-    htmlTemplate += `<p class="rela-block social mb-4"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-linkedin"></i></span>${linkedin}</p>`;
-  if (facebook != "" && facebook != null)
-    htmlTemplate += `<p class="rela-block social mb-0"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-facebook"></i></span>${facebook}</p>`;
-  if (twitter != "" && twitter != null)
-    htmlTemplate += `<p class="rela-block social mb-0"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-twitter-square"></i></span>${twitter}</p>`;
-  if (instagram != "" && github != instagram)
-    htmlTemplate += `<p class="rela-block social mb-0"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-instagram"></i></span>${instagram}</p>`;
-
-  htmlTemplate += `<div class="rela-block caps greyed">Education</div>`;
-  if (college != "" && college != null)
-    htmlTemplate += `<h3 class="mb-0">${college}</h3>
-			<p class="text-muted light mt-0 mb-1">${fromyear1}<span class="mx-2">to</span>${toyear1}</p>
-			<p class="justified mt-0 mb-1" style="font-size: 17px;">${qualification1}</p>
-			<p class="justified mt-0 mb-3" style="font-size: 17px;">${description1}</p>`;
-
-  if (school != "" && school != null)
-    htmlTemplate += `  <h3 class="mb-0">${school}</h3>
-			<p class="text-muted light mt-0 mb-1">${fromyear2}<span class="mx-2">to</span>${toyear2}</p>
-			<p class="justified mt-0 mb-1" style="font-size: 17px;">${qualification2}</p>
-			<p class="justified mt-0 mb-1" style="font-size: 17px;">${description2}</p>`;
-
-  htmlTemplate += `<div class="rela-block caps greyed">Experience</div>`;
-
-  if (institute1 != "" && institute1 != null)
-    htmlTemplate += `<h3>${institute1}</h3>
-            <p class="text-muted light mt-1 mb-2" style="font-size:17px;">${position1}<span class="ml-5 pl-5">Duration: ${duration1}</span></p>
-            <p class="justified" style="font-size:17px;">${experienceDescription1}</p>`;
-
-  if (institute2 != "" && institute2 != null)
-    htmlTemplate += `<h3>${institute2}</h3>
-            <p class="text-muted light mt-1 mb-2" style="font-size:17px;">${position2}<span class="ml-5 pl-5">Duration: ${duration2}</span></p>
-            <p class="justified" style="font-size:17px;">${experienceDescription2}</p>`;
-
-  htmlTemplate += `<div class="rela-block caps greyed">Projects</div>`;
-
-  if (title1 != "" && title1 != null)
+          </div>
+        </section>
+        <section class="down">
+          <div class="even">
+            <div class="education-container">
+              <div class="main-heading">
+                <h3>Education</h3>
+              </div>
+              <div class="education-grid">
+                <div class="education-info">
+                  <p>
+                    <strong class="degree"
+                      >${degree} |
+                      <span class="start">${degree_start_year}</span> to
+                      <span class="end">${degree_end_year}</span></strong
+                    >
+                  </p>
+                  <span class="college"
+                    >${college} |
+                  </span>
+                  <span class="university">${university}</span>
+                </div>`;
+  if (!diploma) {
     htmlTemplate += `
-			<h3>${title1}</h3>
-            <p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link1}</p>
-            <p class="justified" style="font-size:17px;">${projectDescription1}</p>`;
-
-  if (title2 != "" && title2 != null)
+                  <div class="education-info">
+                    <p>
+                      <strong class="boards"
+                        >${hsc} - <span>${hsc_year}</span></strong
+                      >
+                    </p>
+                    <span class="school">${hsc_school}</span>
+                  </div>
+                  <div class="education-info">
+                    <p>
+                      <strong class="boards"
+                        >${ssc} - <span>${ssc_year}</span></strong
+                      >
+                    </p>
+                    <span class="school">${ssc_school}</span>
+                  </div>
+                  `;
+  } else {
     htmlTemplate += `
-            <h3>${title2}</h3>
-            <p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link2}</p>
-            <p class="justified" style="font-size:17px;">${projectDescription2}</p>`;
-
-  if (title3 != "" && title3 != null)
+                  <div class="education-info">
+                    <p>
+                      <strong class="diploma"
+                        >${diploma} - <span class="start">${diploma_start_year}</span> to
+                        <span class="end">${diploma_end_year}</span></strong
+                      >
+                    </p>
+                    <span class="school">${diploma_place}</span>
+                  </div>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+            <div class="programming-language-container">
+              <div class="main-heading">
+                <h3>Programming Language</h3>
+              </div>
+              <div class="programming-languages">`;
+  if (pl1 != "" && pl1 != null) {
+    htmlTemplate += `<strong class="programming-language">|&nbsp;${pl1}</strong>`;
+  }
+  if (pl2 != "" && pl2 != null) {
+    htmlTemplate += `<strong class="programming-language">|&nbsp;${pl2}&nbsp;|</strong>`;
+  }
+  htmlTemplate += `
+              </div>
+              <div class="programming-langauges">`;
+  if (pl3 != "" && pl3 != null) {
+    htmlTemplate += `<strong class="programming-language">|&nbsp;${pl3}</strong>`;
+  }
+  if (pl4 != "" && pl4 != null) {
+    htmlTemplate += `<strong class="programming-language">|&nbsp;${pl4}&nbsp;|</strong>`;
+  }
+  htmlTemplate += `
+              </div>
+              <div class="programming-languages">`;
+  if (pl5 != "" && pl5 != null) {
+    htmlTemplate += `<strong class="programming-language">|&nbsp;${pl5}</strong>`;
+  }
+  if (pl6 != "" && pl6 != null) {
+    htmlTemplate += `<strong class="programming-language">|&nbsp;${pl6}&nbsp;|</strong>`;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+          </div>`;
+  if (true) {
     htmlTemplate += `
-					<h3>${title3}</h3>
-					<p class="light mt-1 mb-2" style="font-size:17px;"><span class="mr-2"><i class="fas fa-link"></i></span>${link3}</p>
-					<p class="justified" style="font-size:17px;">${projectDescription3}</p>`;
+            <div class="odd">
+              <div class="internship-experience-container">
+                <div class="main-heading">
+                  <h3>Internship/Experience</h3>
+                </div>
+                <div class="internship-experiences">`;
+    if (company1 != "" && company1 != null) {
+      htmlTemplate += `
+                  <div class="internship-experience">
+                    <div class="internship-experience-name">
+                      <span><strong>${company1} - </strong></span>
+                      <span><strong>${position1}</strong></span>
+                      <span><strong class="start"> - (${internship_start_year1} </strong></span>to
+                      <span><strong class="end"> ${internship_end_year1}) - </strong></span>
+                      <span class="link"
+                        ><strong>
+                          <a href="${internship_link1}" target="_blank"
+                            ><i class="fa-solid fa-link"></i></a></strong
+                      ></span>
+                    </div>
+                    <div class="internship-experience-desc">
+                      <p>
+                        ${internship_description1}
+                      </p>
+                    </div>
+                </div>`;
+    }
+    if (company2 != "" && company2 != null) {
+      htmlTemplate += `<div class="internship-experience">
+                  <div class="internship-experience-name">
+                  <span><strong>${company2} - </strong></span>
+                  <span><strong>${position2}</strong></span>
+                    <span><strong class="start"> - (${internship_start_year2} </strong></span>to
+                    <span><strong class="end"> ${internship_end_year2}) - </strong></span>
+                    <span class="link"
+                      ><strong>
+                        <a href="${internship_link2}" target="_blank"
+                          ><i class="fa-solid fa-link"></i></a></strong
+                    ></span>
+                  </div>
+                  <div class="internship-experience-desc">
+                    <p>
+                      ${internship_description2}
+                    </p>
+                  </div>
+                </div>`;
+    }
+    if (company3 != "" && company3 != null) {
+      htmlTemplate += `<div class="internship-experience">
+                  <div class="internship-experience-name">
+                  <span><strong>${company3}</strong></span>
+                  <span><strong>${position2}</strong></span>
+                    <span><strong class="start"> - (${internship_start_year3} </strong></span>to
+                    <span><strong class="end"> ${internship_end_year3}) - </strong></span>
+                    <span class="link"
+                      ><strong>
+                        <a href="${internship_link3}" target="_blank"
+                          ><i class="fa-solid fa-link"></i></a></strong
+                    ></span>
+                  </div>
+                  <div class="internship-experience-desc">
+                    <p>
+                      ${internship_description3}
+                    </p>
+                  </div>
+                </div>`;
+    }
+    htmlTemplate += `
+                </div>
+              </div>
+            </div>
+            `;
+  }
+  htmlTemplate += `
+          <div class="odd">
+            <div class="personal-projects-container">
+              <div class="main-heading">
+                <h3>Projects</h3>
+              </div>
+              <div class="personal-projects">`;
+  if (project_title1 != "" && project_title1 != null) {
+    htmlTemplate += `<div class="personal-project">
+                    <div class="personal-project-name">
+                      <span><strong>${project_title1} -</strong></span>
+                      <span
+                        ><strong class="month"> ${project_time1} </strong
+                        >
+                      <span class="link"
+                        ><strong>
+                          <a href="${project_link1}" target="_blank"
+                            ><i class="fa-solid fa-link"></i></a></strong
+                      ></span>
+                    </div>
+                    <div class="personal-project-desc">
+                      <p class="description">
+                        ${project_description1}
+                      </p>
+                    </div>
+                  </div>`;
+  }
+  if (project_title2 != "" && project_title2 != null) {
+    htmlTemplate += `<div class="personal-project">
+                    <div class="personal-project-name">
+                      <span><strong>${project_title2} -</strong></span>
+                      <span
+                        ><strong class="month"> ${project_time2} </strong
+                        >
+                      <span class="link"
+                        ><strong>
+                          <a href="${project_link2}" target="_blank"
+                            ><i class="fa-solid fa-link"></i></a></strong
+                      ></span>
+                    </div>
+                    <div class="personal-project-desc">
+                      <p class="description">
+                        ${project_description2}
+                      </p>
+                    </div>
+                  </div>`;
+  }
+  if (project_title3 != "" && project_title3 != null) {
+    htmlTemplate += `<div class="personal-project">
+                    <div class="personal-project-name">
+                      <span><strong>${project_title3} -</strong></span>
+                      <span
+                        ><strong class="month"> ${project_time3} </strong
+                        >
+                      <span class="link"
+                        ><strong>
+                          <a href="${project_link3}" target="_blank"
+                            ><i class="fa-solid fa-link"></i></a></strong
+                      ></span>
+                    </div>
+                    <div class="personal-project-desc">
+                      <p class="description">
+                        ${project_description3}
+                      </p>
+                    </div>
+                  </div>`;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+          </div>
+          <div class="even">
+            <div class="skills-container">
+              <div class="main-heading">
+                <h3>Skills</h3>
+              </div>
+             <div class="skills">`;
+  if (skill1 != "" && skill1 != null) {
+    htmlTemplate += `
+                <strong class="skill">|&nbsp;${skill1}</strong>
+                `;
+  }
+  if (skill2 != "" && skill2 != null) {
+    htmlTemplate += `
+                <strong class="skill">|&nbsp;${skill2}&nbsp;|</strong>
+                `;
+  }
+  htmlTemplate += `
+              </div>
+              <div class="skills">`;
+  if (skill3 != "" && skill3 != null) {
+    htmlTemplate += `
+                  <strong class="skill">|&nbsp;${skill3}</strong>
+                  `;
+  }
+  if (skill4 != "" && skill4 != null) {
+    htmlTemplate += `
+                  <strong class="skill">|&nbsp;${skill4}&nbsp;|</strong>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
+              <div class="skills">`;
+  if (skill5 != "" && skill5 != null) {
+    htmlTemplate += `
+                  <strong class="skill">|&nbsp;${skill5}</strong>
+                  `;
+  }
+  if (skill6 != "" && skill6 != null) {
+    htmlTemplate += `
+                  <strong class="skill">|&nbsp;${skill6}&nbsp;|</strong>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+            <div class="major-achievements-container">
+              <div class="main-heading">
+                <h3>Major Achievements</h3>
+              </div>
+              <div class="major-achievements">`;
+  if (achievement1 != "" && achievement1 != null) {
+    htmlTemplate += `
+                  <strong class="achievement">|&nbsp;${achievement1}</strong>
+                  `;
+  }
+  if (achievement2 != "" && achievement2 != null) {
+    htmlTemplate += `
+                  <strong class="achievement">|&nbsp;${achievement2}&nbsp;|</strong>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
+              <div class="major-achievements">`;
+  if (achievement3 != "" && achievement3 != null) {
+    htmlTemplate += `
+                <strong class="achievement">|&nbsp;${achievement3}</strong>
+                `;
+  }
+  if (achievement4 != "" && achievement4 != null) {
+    htmlTemplate += `
+                <strong class="achievement">|&nbsp;${achievement4}&nbsp;|</strong>
+                `;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+          </div>        
+          
+          <div class="even">
+            <div class="area-of-interest-container">
+              <div class="main-heading">
+                <h3>Area of Interest</h3>
+              </div>
+              <div class="area-of-interest-even">`;
 
-  htmlTemplate += `</div>
-    </div>
+  if (interest1 != "" && interest1 != null) {
+    htmlTemplate += `
+                  <strong class="area">|&nbsp;${interest1}</strong>
+                  `;
+  }
+  if (interest2 != "" && interest2 != null) {
+    htmlTemplate += `
+                  <strong class="area">|&nbsp;${interest2}&nbsp;|</strong>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
+              <div class="area-of-interest-even">`;
+  if (interest3 != "" && interest3 != null) {
+    htmlTemplate += `
+                  <strong class="area">|&nbsp;${interest3}</strong>
+                  `;
+  }
+  if (interest4 != "" && interest4 != null) {
+    htmlTemplate += `
+                  <strong class="area">|&nbsp;${interest4}&nbsp;|</strong>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+            <div class="references-container">
+              <div class="main-heading">
+                <h3>References</h3>
+              </div>
+              <div class="references-flex">`;
+  if (prof_name1 != "" && prof_name1 != null) {
+    htmlTemplate += `
+                  <div class="reference">
+                    <p>
+                      <strong class="prof-name">${prof_name1}</strong
+                      ><span class="link">${prof_link1}</span>
+                    </p>
+                    <p><span>${prof_description1}</span></p>
+                  </div>`;
+  }
+  if (prof_name2 != "" && prof_name2 != null) {
+    htmlTemplate += `
+                  <div class="reference">
+                    <p>
+                      <strong class="prof-name">${prof_name2}</strong
+                      ><span class="link">${prof_link2}</span>
+                    </p>
+                    <p><span>${prof_description2}</span></p>
+                  </div>`;
+  }
+  htmlTemplate += `
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </body>
     </html>
   `;
+
   return htmlTemplate;
 };
