@@ -64,7 +64,6 @@ export class Resume extends Component {
     internship_start_year2: "",
     internship_end_year2: "",
     internship_description2: "",
-    internship_description1: "",
     company3: "",
     position3: "",
     internship_link3: "",

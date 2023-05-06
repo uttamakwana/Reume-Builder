@@ -15,3 +15,24 @@ button, input{
 div{
   font-family: 'Ubuntu', sans-serif;
 }
+
+/* input[type="file"] {
+  width: 100%;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  margin-left: 10px;
+  margin-bottom: 20px;
+} */
+
+::-webkit-file-upload-button{
+  width: 100px;
+  height: 40px;
+  background-color: #1f2937;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}

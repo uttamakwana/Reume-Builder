@@ -3,9 +3,19 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ScrollToTop from './ScrollToTop';
+import Modal from 'react-modal';
+import { Dna, Watch } from 'react-loader-spinner'
+import ReactModal from 'react-modal';
 
 
 class Experience extends Component {
+
+  state = {
+    showModal: false,
+    isLoading: false
+  };
+
+
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
@@ -17,8 +27,11 @@ class Experience extends Component {
   };
 
   createAndDownloadPDF = () => {
+    this.setState({ showModal: true }); // Open the modal
+    this.setState({ isLoading: true }); // Start the loader
+
     axios
-      .post("/api/create-pdf", this.props.values, {
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
@@ -27,11 +40,48 @@ class Experience extends Component {
       .then(res => {
         console.log(res.data);
         saveAs(res.data, `${this.props.values.firstname}'s Resume.pdf`);
+        this.setState({ isLoading: false }); // Stop the loader
+        this.setState({ showModal: false }); // Close the modal
       })
       .catch(err => {
-        console.log(err, "Uttam Makwadfsdfna");
+        console.log(err, "Custom Errror");
+        this.setState({ isLoading: false }); // Stop the loader
+        this.setState({ showModal: false }); // Close the modal
       })
   };
+
+  previewPDF = () => {
+    this.setState({ showModal: true }); // Open the modal
+    this.setState({ isLoading: true });
+    axios
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
+        responseType: 'blob',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => {
+        this.setState({ isLoading: false }); // Stop the loader
+        this.setState({ showModal: false }); // Close the modal
+        const file = new Blob([res.data], { type: 'application/pdf' });
+        const fileURL = URL.createObjectURL(file);
+        const newWindow = window.open(fileURL, '_blank', 'toolbar=0,location=0,menubar=0');
+        const closeBtn = document.createElement("button");
+        closeBtn.innerText = "Close";
+        closeBtn.style.marginTop = "10px";
+        closeBtn.addEventListener("click", () => {
+          newWindow.close();
+        });
+        newWindow.document.body.appendChild(closeBtn);
+      })
+      .catch(err => {
+        console.log(err, "Custom Error");
+        this.setState({ isLoading: false }); // Stop the loader
+        this.setState({ showModal: false }); // Close the modal
+      })
+  };
+
+
 
   render() {
     const { values } = this.props;
@@ -195,10 +245,62 @@ class Experience extends Component {
               Next
             </button>
           </div>
-          <button onClick={this.createAndDownloadPDF} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3">
-            <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
-            <span>Download Resume</span>
-          </button>
+          <div className='flex justify-between  flex-wrap w-[70%] lg:w-[60%] m-auto'>
+            <button onClick={this.previewPDF} className="bg-white text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3">
+              <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
+              <span>Review Resume</span>
+
+            </button>
+            <button onClick={this.createAndDownloadPDF} className="bg-white text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3">
+              <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
+              <span>Download Resume</span>
+            </button>
+
+            <Modal
+              isOpen={this.state.showModal}
+              contentLabel="Loading..."
+              style={{
+                overlay: {
+                  position: 'fixed',
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: '#E9E9E98F'
+                },
+                content: {
+                  position: 'absolute',
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  width:'200px',
+                  height:'200px',
+                  margin:'auto',
+                  border: '1px solid',
+                  background: '#070313',
+                  overflow: 'auto',
+                  WebkitOverflowScrolling: 'touch',
+                  borderRadius: '100px',
+                  outline: 'none',
+                  padding: '20px'
+                }
+              }}
+            >
+              <Watch
+                height="100"
+                width="100"
+                radius="48"
+                color="#FFFFFF"
+                ariaLabel="watch-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
+            </Modal>
+          </div>
         </div>
       </>
     );

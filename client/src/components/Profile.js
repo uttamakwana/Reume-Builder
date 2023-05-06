@@ -180,17 +180,19 @@ class Profile extends Component {
           </div>
 
           <div className='my-3'>
-              <label className="block text-white font-bold mb-2">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">
                 Image
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-white"
+                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-white dark:text-gray-400 focus:outline-none p-0"
                 type="file"
+                id="file_input"
                 name="profile_img_url"
                 required
                 accept='image/*'
                 onChange={this.props.handleChange}
               />
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG or GIF (MAX. 800x400px).</p>
             </div>
 
           <div className="m-3 mt-5 flex justify-between">
