@@ -192,7 +192,7 @@ class Profile extends Component {
                 accept='image/*'
                 onChange={this.props.handleChange}
               />
-              <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG or GIF (MAX. 800x400px).</p>
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG  (MAX. 800x400px).</p>
             </div>
 
           <div className="m-3 mt-5 flex justify-between">
