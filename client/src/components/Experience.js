@@ -18,7 +18,6 @@ class Experience extends Component {
 
   allFieldsFilled = () => {
     const { values } = this.props;
-
     // Check if all required fields have a value
     if (
       values.company1.trim() === "" ||

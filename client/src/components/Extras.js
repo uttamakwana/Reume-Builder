@@ -4,8 +4,8 @@ import { saveAs } from 'file-saver';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ScrollToTop from './ScrollToTop';
 import Modal from 'react-modal';
-import { Dna, Watch } from 'react-loader-spinner'
-import ReactModal from 'react-modal';
+import { Watch } from 'react-loader-spinner'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 class Experience extends Component {
@@ -44,6 +44,7 @@ class Experience extends Component {
         this.setState({ showModal: false }); // Close the modal
       })
       .catch(err => {
+        toast.error(err.message , "Custom Error");
         console.log(err, "Custom Errror");
         this.setState({ isLoading: false }); // Stop the loader
         this.setState({ showModal: false }); // Close the modal
@@ -75,6 +76,7 @@ class Experience extends Component {
         newWindow.document.body.appendChild(closeBtn);
       })
       .catch(err => {
+        toast.error(err.message , "Custom Error");
         console.log(err, "Custom Error");
         this.setState({ isLoading: false }); // Stop the loader
         this.setState({ showModal: false }); // Close the modal
@@ -89,6 +91,25 @@ class Experience extends Component {
     return (
       <>
         <ScrollToTop />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          style={{
+            toast: {
+              fontSize: '16px',
+              fontWeight: 'bold',
+              backgroundColor: 'white',
+              color: '#ffff',
+            },
+          }}
+        />
         <div className="p-2 lg:p-3 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
           <div className="p-4">
             <h3 className="text-2xl font-extrabold  text-white">Extra Details - 2</h3>
