@@ -149,7 +149,7 @@ module.exports = (values) => {
       padding: 0.5rem;
       display: flex;
       gap: 0.5rem;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
       background-color: #4DD0E1;
     }
     .up .profile-container {
@@ -158,13 +158,13 @@ module.exports = (values) => {
       justify-content: center;
       align-items: center;
       position: relative;
-      border-right: 3px dashed black;
+      border-right: 2px dashed black;
       padding-right: 2rem;
     }
     .profile-img{
       height: 100px;
       width: 100px;
-      border: 1px solid blue;
+      border: 1px solid black;
       margin-right: .5rem;
       border-radius: 5px;
       padding: .2rem;
@@ -172,7 +172,6 @@ module.exports = (values) => {
     .profile-img img{
       max-height: 100%;
       width: 100%;
-      outline: 1px solid green;
       object-fit: cover;
     }
     .up .profile-container h1 {
@@ -190,7 +189,7 @@ module.exports = (values) => {
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding: 0.3rem;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
     }
     .even:last-child {
       border: none;
@@ -198,7 +197,7 @@ module.exports = (values) => {
     .odd {
       display: flex;
       padding: 0.3rem;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
     }
     .education-container, .skills-container, .area-of-interest-container{
       border-right: 2px dashed black;
