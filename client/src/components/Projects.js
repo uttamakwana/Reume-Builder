@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 class Projects extends Component {
+
+
   continue = e => {
     e.preventDefault ();
     this.props.nextStep ();
@@ -32,6 +34,7 @@ class Projects extends Component {
 
   render () {
     const {values} = this.props;
+
 
     return (
       <>

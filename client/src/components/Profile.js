@@ -19,6 +19,7 @@ class Profile extends Component {
       values.lastname.trim() === "" ||
       values.email.trim() === "" ||
       values.phone.trim() === "" ||
+      values.imgValue === false ||
       values.address.trim() === ""
     ) {
       return false;
@@ -183,9 +184,9 @@ class Profile extends Component {
                 type="file"
                 id="file_input"
                 name="profile_img_url"
-                required
                 accept='image/*'
                 onChange={this.props.handleChange}
+                required
               />
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG  (MAX. 800x400px).</p>
             </div>

@@ -83,6 +83,22 @@ class Experience extends Component {
       })
   };
 
+  allFieldsFilled = () => {
+    const { values } = this.props;
+    // Check if all required fields have a value
+    if (
+      values.skill1.trim() === "" ||
+      values.skill2.trim() === "" ||
+      values.skill3.trim() === "" ||
+      values.pl1.trim() === "" ||
+      values.pl2.trim() === "" ||
+      values.pl3.trim() === ""
+    ) {
+      return false;
+    }
+    return true;
+  };
+
 
 
   render() {
@@ -126,7 +142,7 @@ class Experience extends Component {
                 <div className='flex flex-wrap items-center justify-center'>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill1"
                       placeholder="skill 1"
                       value={values.skill1}
@@ -135,7 +151,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3' >
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill2"
                       placeholder="skill 2"
                       value={values.skill2}
@@ -144,7 +160,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill3"
                       placeholder="skill 3"
                       value={values.skill3}
@@ -153,7 +169,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill4"
                       placeholder="skill 4"
                       value={values.skill4}
@@ -162,7 +178,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill5"
                       placeholder="skill 5"
                       value={values.skill5}
@@ -171,7 +187,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill6"
                       placeholder="skill 6"
                       value={values.skill6}
@@ -193,7 +209,7 @@ class Experience extends Component {
                 <div className='flex flex-wrap items-center justify-center'>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="pl1"
                       placeholder="PL1"
                       value={values.pl1}
@@ -202,7 +218,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3' >
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="pl2"
                       placeholder="PL2"
                       value={values.pl2}
@@ -211,7 +227,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="pl3"
                       placeholder="PL3"
                       value={values.pl3}
@@ -220,7 +236,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="pl4"
                       placeholder="PL4"
                       value={values.pl4}
@@ -229,7 +245,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="pl5"
                       placeholder="PL5"
                       value={values.pl5}
@@ -238,7 +254,7 @@ class Experience extends Component {
                   </div>
                   <div className='m-3'>
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="pl6"
                       placeholder="PL6"
                       value={values.pl6}
@@ -271,12 +287,20 @@ class Experience extends Component {
             <button onClick={this.previewPDF} className="bg-white text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3">
               <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
               <span>Review Resume</span>
-
             </button>
-            <button onClick={this.createAndDownloadPDF} className="bg-white text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3">
+
+
+            {this.allFieldsFilled() ? (
+              <button onClick={this.createAndDownloadPDF} className="bg-white text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3">
               <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
               <span>Download Resume</span>
             </button>
+            ) : (
+              <button className='text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center my-2 mb-3 cursor-not-allowed disabled:opacity-70  bg-gray-400' onClick={() => { toast.error('Please Fill all required Feilds..!'); }}>
+                <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" /></svg>
+                <span>Download Resume</span>
+              </button>
+            )}
 
             <Modal
               isOpen={this.state.showModal}
