@@ -13,21 +13,16 @@ class Profile extends Component {
 
   allFieldsFilled = () => {
     const { values } = this.props;
-
     // Check if all required fields have a value
     if (
       values.firstname.trim() === "" ||
       values.lastname.trim() === "" ||
       values.email.trim() === "" ||
       values.phone.trim() === "" ||
-      values.github.trim() === "" ||
-      values.linkedin.trim() === "" ||
-      values.address.trim() === "" ||
-      values.website.trim() === ""
+      values.address.trim() === ""
     ) {
       return false;
     }
-
     return true;
   };
 
@@ -66,12 +61,12 @@ class Profile extends Component {
 
             <div>
               <label className="block text-white font-bold mb-2">
-                First Name
+                First Name<span className="mandatory">*</span>
               </label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="text"
-                placeholder="First Name"
+                placeholder="first name"
                 name="firstname"
                 required
                 value={values.firstname}
@@ -81,12 +76,12 @@ class Profile extends Component {
 
             <div>
               <label className="block text-white font-bold mb-2">
-                Last Name
+                Last Name<span className="mandatory">*</span>
               </label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="text"
-                placeholder="Last Name"
+                placeholder="last name"
                 name="lastname"
                 required
                 value={values.lastname}
@@ -97,11 +92,11 @@ class Profile extends Component {
 
 
             <div>
-              <label className="block text-white font-bold mb-2">Email</label>
+              <label className="block text-white font-bold mb-2">Email<span className="mandatory">*</span></label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="email"
-                placeholder="Email"
+                placeholder="email"
                 name="email"
                 required
                 value={values.email}
@@ -111,12 +106,12 @@ class Profile extends Component {
 
             <div>
               <label className="block text-white font-bold mb-2">
-                Phone Number
+                Phone Number<span className="mandatory">*</span>
               </label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="tel"
-                placeholder="Phone Number"
+                placeholder="phone number"
                 name="phone"
                 value={values.phone}
                 onChange={this.props.handleChange}
@@ -130,7 +125,7 @@ class Profile extends Component {
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="url"
-                placeholder="Your Website"
+                placeholder="Ex:- https://www.gecg28.ac.in/"
                 name="website"
                 value={values.website}
                 onChange={this.props.handleChange}
@@ -142,7 +137,7 @@ class Profile extends Component {
               <input
                 className=" block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="url"
-                placeholder="GitHub"
+                placeholder="Ex:- https://github.com/username"
                 name="github"
                 value={values.github}
                 onChange={this.props.handleChange}
@@ -156,7 +151,7 @@ class Profile extends Component {
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="url"
-                placeholder="LinkedIn"
+                placeholder="Ex:- https://linkedin.com/in/username"
                 name="linkedin"
                 value={values.linkedin}
                 onChange={this.props.handleChange}
@@ -165,12 +160,12 @@ class Profile extends Component {
 
             <div>
               <label className="block text-white font-bold mb-2">
-                Address
+                Address<span className="mandatory">*</span>
               </label>
               <input
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 type="text"
-                placeholder="Ex. Gandhinagar"
+                placeholder="Ex. Gandhinagar(Only city name)"
                 name="address"
                 value={values.address}
                 onChange={this.props.handleChange}
@@ -181,7 +176,7 @@ class Profile extends Component {
 
           <div className='my-3'>
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">
-                Image
+                Image<span className="mandatory">*</span>
               </label>
               <input
                 className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-white dark:text-gray-400 focus:outline-none p-0"

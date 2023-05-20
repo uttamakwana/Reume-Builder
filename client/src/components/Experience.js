@@ -33,7 +33,7 @@ class Experience extends Component {
       values.internship_description1.trim() === "" ||
       values.internship_description2.trim() === ""
     ) {
-      return false;
+      return true;
     }
 
     return true;
@@ -74,36 +74,36 @@ class Experience extends Component {
             <div className='w-[100%]'>
               <h5 className='text-white'>
                 <CheckCircleIcon />
-                <span className="pl-3">Internship / Experience - 1</span>
+                <span className="pl-3">Internship / Experience - 1</span><span className="mandatory">*</span>
               </h5>
               <div className='flex flex-col' />
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="company1"
-                  placeholder="Institue/Organisation/Company*"
+                  placeholder="Institue/Organisation/Company name*"
                   style={{ width: '90%' }}
-                  required
                   value={values.company1}
                   onChange={this.props.handleChange}
+                  required
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="position1"
-                  placeholder="Position*"
+                  placeholder="position*"
                   style={{ width: '90%' }}
-                  required
                   value={values.position1}
                   onChange={this.props.handleChange}
+                  required
                 />
               </div>
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="internship_link1"
-                  placeholder="Link 1"
+                  placeholder="Ex:- https://www.tcs.com/"
                   style={{ width: '90%' }}
                   value={values.internship_link1}
                   onChange={this.props.handleChange}
@@ -113,7 +113,7 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="internship_start_year1"
-                  placeholder="Start year*"
+                  placeholder="start year*"
                   style={{ width: '90%' }}
                   required
                   value={values.internship_start_year1}
@@ -126,7 +126,7 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="internship_end_year1"
-                  placeholder="End year*"
+                  placeholder="end year*"
                   style={{ width: '90%' }}
                   required
                   value={values.internship_end_year1}
@@ -137,7 +137,7 @@ class Experience extends Component {
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder='Description*'
+                  placeholder='description*'
                   style={{ width: '90%' }}
                   name="internship_description1"
                   required
@@ -159,9 +159,8 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="company2"
-                  placeholder="Institue/Organisation/Company*"
+                  placeholder="Institue/Organisation/Company name"
                   style={{ width: '90%' }}
-                  required
                   value={values.company2}
                   onChange={this.props.handleChange}
                 />
@@ -170,9 +169,8 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="position2"
-                  placeholder="Position*"
+                  placeholder="position"
                   style={{ width: '90%' }}
-                  required
                   value={values.position2}
                   onChange={this.props.handleChange}
                 />
@@ -181,7 +179,7 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="internship_link2"
-                  placeholder="Link 2"
+                  placeholder="Ex:- https://in.indeed.com/"
                   style={{ width: '90%' }}
 
                   value={values.internship_link2}
@@ -192,9 +190,8 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="internship_start_year2"
-                  placeholder="Start year*"
+                  placeholder="start year"
                   style={{ width: '90%' }}
-                  required
                   value={values.internship_start_year2}
                   onChange={this.props.handleChange}
 
@@ -205,9 +202,8 @@ class Experience extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="internship_end_year2"
-                  placeholder="End year*"
+                  placeholder="end year"
                   style={{ width: '90%' }}
-                  required
                   value={values.internship_end_year2}
                   onChange={this.props.handleChange}
                 />
@@ -216,10 +212,9 @@ class Experience extends Component {
               <div className='my-3'>
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                  placeholder='Description*'
+                  placeholder='sescription'
                   style={{ width: '90%' }}
                   name="internship_description2"
-                  required
                   value={values.internship_description2}
                   onChange={this.props.handleChange}
                 />

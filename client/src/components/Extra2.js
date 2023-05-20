@@ -83,7 +83,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="interest1"
-                      placeholder="Interest 1"
+                      placeholder="Ex:- Web Developer"
                       value={values.interest1}
                       onChange={this.props.handleChange}
                     />
@@ -92,7 +92,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="interest2"
-                      placeholder="Interest 2"
+                      placeholder="Ex:- Android Developer"
                       value={values.interest2}
                       onChange={this.props.handleChange}
                     />
@@ -101,7 +101,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="interest3"
-                      placeholder="Interest 3"
+                      placeholder="Ex:- Full Stack Developer"
                       value={values.interest3}
                       onChange={this.props.handleChange}
                     />
@@ -110,7 +110,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="interest4"
-                      placeholder="Interest 4"
+                      placeholder="Ex:- Project Manager"
                       value={values.interest4}
                       onChange={this.props.handleChange}
                     />
@@ -119,7 +119,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="interest5"
-                      placeholder="Interest 5"
+                      placeholder="Ex:- Data Scientist"
                       value={values.interest5}
                       onChange={this.props.handleChange}
                     />
@@ -128,7 +128,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="interest6"
-                      placeholder="Interest 6"
+                      placeholder="Ex:- Cyber Security Engineer"
                       value={values.interest6}
                       onChange={this.props.handleChange}
                     />
@@ -150,7 +150,8 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="achievement1"
-                      placeholder="Achievement 1"
+                      placeholder="Ex:- Received awards"
+                      required
                       value={values.achievement1}
                       onChange={this.props.handleChange}
                     />
@@ -161,6 +162,7 @@ class AOTAchievement extends Component {
                       name="achievement2"
                       placeholder="Achievement 2"
                       value={values.achievement2}
+                      required
                       onChange={this.props.handleChange}
                     />
                   </div>
@@ -201,7 +203,7 @@ class AOTAchievement extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="prof_name1"
-                      placeholder="Professor Name 1"
+                      placeholder="professor name"
                       value={values.prof_name1}
                       onChange={this.props.handleChange}
                     />
@@ -211,7 +213,7 @@ class AOTAchievement extends Component {
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="prof_link1"
                       type="url"
-                      placeholder="Professor Link 1"
+                      placeholder="insert drive link of LOR PDF signed by professor"
                       value={values.prof_link1}
                       onChange={this.props.handleChange}
                     />
@@ -226,7 +228,7 @@ class AOTAchievement extends Component {
                     />
                   </div>
 
-                  <div className="m-3">
+                  {/* <div className="m-3">
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="prof_name2"
@@ -253,7 +255,7 @@ class AOTAchievement extends Component {
                       value={values.prof_description2}
                       onChange={this.props.handleChange}
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

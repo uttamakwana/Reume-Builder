@@ -78,13 +78,13 @@ class Profile extends Component {
                     className="block mb-2 font-medium  text-white"
                     htmlFor="college"
                   >
-                    College
+                    College<span className="mandatory">*</span>
                   </label>
                   <input
                     className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     type="text"
                     id="college"
-                    placeholder="College name"
+                    placeholder="college name"
                     name="college"
                     value={values.college}
                     onChange={this.props.handleChange}
@@ -95,13 +95,13 @@ class Profile extends Component {
                     className="block mb-2 font-medium  text-white"
                     htmlFor="university"
                   >
-                    University
+                    University<span className="mandatory">*</span>
                   </label>
                   <input
                     className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     type="text"
                     id="university"
-                    placeholder="University name"
+                    placeholder="university name"
                     name="university"
                     value={values.university}
                     onChange={this.props.handleChange}
@@ -112,15 +112,16 @@ class Profile extends Component {
                     className="block mb-2 font-medium  text-white"
                     htmlFor="degree_start_year"
                   >
-                    From Year
+                    From Year<span className="mandatory">*</span>
                   </label>
                   <input
                     className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    type="year"
+                    type="text"
                     id="degree_start_year"
                     name="degree_start_year"
                     value={values.degree_start_year}
                     onChange={this.props.handleChange}
+                    placeholder="Ex:- 2020"
                   />
                 </div>
                 <div className="md:col-span-3">
@@ -128,13 +129,14 @@ class Profile extends Component {
                     className="block mb-2 font-medium  text-white"
                     htmlFor="degree_end_year"
                   >
-                    To Year
+                    To Year<span className="mandatory">*</span>
                   </label>
                   <input
                     className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     type="year"
                     id="degree_end_year"
                     name="degree_end_year"
+                    placeholder="Ex:- 2024"
                     value={values.degree_end_year}
                     onChange={this.props.handleChange}
                   />
@@ -144,12 +146,12 @@ class Profile extends Component {
                     className="block mb-2 font-medium  text-white"
                     htmlFor="degree"
                   >
-                    Qualification
+                    Qualification<span className="mandatory">*</span>
                   </label>
                   <input
                     className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     type="text"
-                    placeholder="Qualification"
+                    placeholder="Ex:- BE/ME"
                     id="degree"
                     name="degree"
                     value={values.degree}
@@ -195,104 +197,138 @@ class Profile extends Component {
               <>
                 <div className="p-4">
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-3">
                       <label
                         className="block mb-2 font-medium  text-white"
                         htmlFor="ssc"
                       >
-                        10th Board
+                        10th Board<span className="mandatory">*</span>
                       </label>
                       <input
                         className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         type="text"
                         id="ssc"
-                        placeholder="SSC"
+                        placeholder="EX. CBSC/GSEB/ICSC"
                         name="ssc"
                         value={values.ssc}
                         onChange={this.props.handleChange}
                       />
                     </div>
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-3">
+                      <label
+                        className="block mb-2 font-medium  text-white"
+                        htmlFor="ssc_pr"
+                      >
+                        10th Percentage<span className="mandatory">*</span>
+                      </label>
+                      <input
+                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        type="text"
+                        id="ssc_pr"
+                        placeholder="EX. 92%"
+                        name="ssc_pr"
+                        value={values.ssc_pr}
+                        onChange={this.props.handleChange}
+                      />
+                    </div>
+                    <div className="md:col-span-3">
                       <label
                         className="block mb-2 font-medium  text-white"
                         htmlFor="ssc_school"
                       >
-                        School Name
+                        School Name<span className="mandatory">*</span>
                       </label>
                       <input
                         className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         type="text"
                         id="ssc_school"
                         name="ssc_school"
-                        placeholder="School name"
+                        placeholder="school name"
                         value={values.ssc_school}
                         onChange={this.props.handleChange}
                       />
                     </div>
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-3">
                       <label
                         className="block mb-2 font-medium  text-white"
                         htmlFor="ssc_year"
                       >
-                        10th passing year
+                        10th passing year<span className="mandatory">*</span>
                       </label>
                       <input
                         className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        type="year"
+                        type="text"
                         id="ssc_year"
-                        placeholder="Ex. 2018"
+                        placeholder="Ex:- 2018"
                         name="ssc_year"
                         value={values.ssc_year}
                         onChange={this.props.handleChange}
                       />
                     </div>
 
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-3">
                       <label
                         className="block mb-2 font-medium  text-white"
                         htmlFor="hsc"
                       >
-                        12th Board
+                        12th Board<span className="mandatory">*</span>
                       </label>
                       <input
                         className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         type="text"
                         id="hsc"
-                        placeholder="HSC"
+                        placeholder="EX. CBSC/GSEB/ICSC"
                         name="hsc"
                         value={values.hsc}
                         onChange={this.props.handleChange}
                       />
                     </div>
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-3">
+                      <label
+                        className="block mb-2 font-medium  text-white"
+                        htmlFor="hsc_pr"
+                      >
+                        12th Percentage<span className="mandatory">*</span>
+                      </label>
+                      <input
+                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        type="text"
+                        id="hsc_pr"
+                        placeholder="EX. 95%"
+                        name="hsc_pr"
+                        value={values.hsc_pr}
+                        onChange={this.props.handleChange}
+                      />
+                    </div>
+                    <div className="md:col-span-3">
                       <label
                         className="block mb-2 font-medium  text-white"
                         htmlFor="hsc_school"
                       >
-                        School Name
+                        School Name<span className="mandatory">*</span>
                       </label>
                       <input
                         className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         type="text"
                         id="hsc_school"
                         name="hsc_school"
-                        placeholder="School name"
+                        placeholder="school name"
                         value={values.hsc_school}
                         onChange={this.props.handleChange}
                       />
                     </div>
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-3">
                       <label
                         className="block mb-2 font-medium  text-white"
                         htmlFor="hsc_year"
                       >
-                        12th passing year
+                        12th passing year<span className="mandatory">*</span>
                       </label>
                       <input
                         className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        type="year"
+                        type="text"
                         id="hsc_year"
-                        placeholder="Ex. 2020"
+                        placeholder="Ex:- 2020"
                         name="hsc_year"
                         value={values.hsc_year}
                         onChange={this.props.handleChange}
@@ -304,41 +340,41 @@ class Profile extends Component {
             ) : (
               <div className="p-4">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
-                  <div className="md:col-span-4">
+                  <div className="md:col-span-6">
                     <label
                       className="block mb-2 font-medium  text-white"
                       htmlFor="diploma"
                     >
-                      Diploma
+                      Diploma Course
                     </label>
                     <input
                       className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       type="text"
                       id="diploma"
-                      placeholder="Diploma degree name"
+                      placeholder="Ex. Civil/Agricultural/Computer"
                       name="diploma"
                       value={values.diploma}
                       onChange={this.props.handleChange}
                     />
                   </div>
-                  <div className="md:col-span-4">
+                  <div className="md:col-span-6">
                     <label
                       className="block mb-2 font-medium  text-white"
                       htmlFor="diploma_place"
                     >
-                      University Name
+                      University/College Name
                     </label>
                     <input
                       className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       type="text"
                       id="diploma_place"
                       name="diploma_place"
-                      placeholder="University name"
+                      placeholder="university/college name"
                       value={values.diploma_place}
                       onChange={this.props.handleChange}
                     />
                   </div>
-                  <div className="md:col-span-4">
+                  <div className="md:col-span-6">
                     <label
                       className="block mb-2 font-medium  text-white"
                       htmlFor="diploma_start_year"
@@ -356,7 +392,7 @@ class Profile extends Component {
                     />
                   </div>
 
-                  <div className="md:col-span-4">
+                  <div className="md:col-span-6">
                     <label
                       className="block mb-2 font-medium  text-white"
                       htmlFor="diploma_end_year"

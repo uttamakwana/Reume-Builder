@@ -10,6 +10,7 @@ module.exports = (values) => {
     linkedin,
     address,
     profile_img_url,
+    // collegeLOGO,
 
     // Education Information
     college,
@@ -18,9 +19,11 @@ module.exports = (values) => {
     degree_end_year,
     degree,
     ssc,
+    ssc_pr,
     ssc_school,
     ssc_year,
     hsc,
+    hsc_pr,
     hsc_school,
     hsc_year,
     diploma,
@@ -97,6 +100,40 @@ module.exports = (values) => {
     prof_description2,
   } = values;
 
+  const inputDate1 = project_time1;
+  const inputDate2 = project_time2;
+  const inputDate3 = project_time3;
+  const dateParts1 = inputDate1.split("-");
+  const dateParts2 = inputDate2.split("-");
+  const dateParts3 = inputDate3.split("-");
+  const year1 = parseInt(dateParts1[0]);
+  const month1 = parseInt(dateParts1[1]) - 1; // Month is zero-based in JavaScript
+  const year2 = parseInt(dateParts2[0]);
+  const month2 = parseInt(dateParts2[1]) - 1; // Month is zero-based in JavaScript
+  const year3 = parseInt(dateParts3[0]);
+  const month3 = parseInt(dateParts3[1]) - 1; // Month is zero-based in JavaScript
+  const collegeLOGO = "https://res.cloudinary.com/dllxcv4s8/image/upload/v1684387484/GECG_logo.png";
+
+  const collgeIMG =  `<img src="https://res.cloudinary.com/dllxcv4s8/image/upload/v1684387484/GECG_logo.png" alt="college logo" />`;
+
+  const formattedDate1 = new Date(year1, month1).toLocaleString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+  const formattedDate2 = new Date(year2, month2).toLocaleString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+  const formattedDate3 = new Date(year3, month3).toLocaleString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+
+  let pt1 = formattedDate1;
+  let pt2 = formattedDate2;
+  let pt3 = formattedDate3;
+
+
   let htmlTemplate = `
     <!DOCTYPE html>
     <html lang="en">
@@ -109,7 +146,7 @@ module.exports = (values) => {
         src="https://kit.fontawesome.com/8a1a8282cc.js"
         crossorigin="anonymous"
       ></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
       <style>
       @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,100;1,400;1,700;1,900&family=Montserrat:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;1,200;1,300;1,500;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,800;1,900&family=Tilt+Neon&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
       *,
@@ -144,12 +181,13 @@ module.exports = (values) => {
       flex-direction: column;
       outline: 2px solid black;
       max-width: 7.1in;
+      max-height: 11.4in;
     }
     .up {
       padding: 0.5rem;
       display: flex;
       gap: 0.5rem;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
       background-color: #4DD0E1;
     }
     .up .profile-container {
@@ -158,13 +196,18 @@ module.exports = (values) => {
       justify-content: center;
       align-items: center;
       position: relative;
-      border-right: 3px dashed black;
-      padding-right: 2rem;
+      border-right: 2px dashed black;
+      padding-right: 1rem;
+    }
+
+    .up .profile-info-container{
+      padding-right: 1rem;
+      border-right: 2px dashed black;
     }
     .profile-img{
       height: 100px;
       width: 100px;
-      border: 1px solid blue;
+      border: 1px solid black;
       margin-right: .5rem;
       border-radius: 5px;
       padding: .2rem;
@@ -172,7 +215,6 @@ module.exports = (values) => {
     .profile-img img{
       max-height: 100%;
       width: 100%;
-      outline: 1px solid green;
       object-fit: cover;
     }
     .up .profile-container h1 {
@@ -182,6 +224,21 @@ module.exports = (values) => {
       font-size: 0.8rem;
       font-family: "Poppins", sans-serif;
     }
+
+    .college-logo{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .college-logo img{
+      max-width: 100%;
+      height: 80%;
+      width: 80px;
+      height: 80px;
+      object-fit:cover;
+    }
     .down {
       display: flex;
       flex-direction: column;
@@ -190,7 +247,7 @@ module.exports = (values) => {
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding: 0.3rem;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
     }
     .even:last-child {
       border: none;
@@ -198,7 +255,7 @@ module.exports = (values) => {
     .odd {
       display: flex;
       padding: 0.3rem;
-      border-bottom: 3px solid black;
+      border-bottom: 2px solid black;
     }
     .education-container, .skills-container, .area-of-interest-container{
       border-right: 2px dashed black;
@@ -314,7 +371,7 @@ module.exports = (values) => {
     htmlTemplate += `
               <div class="profile-info">
                 <i class="fa-brands fa-linkedin"></i>&nbsp;:
-                <span class="linkedin"> ${linkedin} </span>
+                <a href="${linkedin}"> <span class="linkedin"> ${linkedin} </span></a>
               </div>
               `;
   }
@@ -330,7 +387,7 @@ module.exports = (values) => {
     htmlTemplate += `
                <div class="profile-info">
                   <i class="fa-solid fa-earth-americas"></i>&nbsp;:
-                  <span class="website"> ${website} </span>
+                  <a href="${website}"> <span class="website"> ${website} </span></a>
               </div>
               `;
   }
@@ -338,11 +395,14 @@ module.exports = (values) => {
     htmlTemplate += `
               <div class="profile-info">
                 <i class="fa-brands fa-github"></i>&nbsp;:
-                <a href="https://github.com/${github}"> <span class="github"> ${github} </span></a>
+                <a href="${github}"> <span class="github"> ${github} </span></a>
               </div>
               `;
   }
   htmlTemplate += `
+          </div>
+          <div class="college-logo">
+            <img src=${collegeLOGO} alt="User" />
           </div>
         </section>
         <section class="down">
@@ -370,7 +430,7 @@ module.exports = (values) => {
                   <div class="education-info">
                     <p>
                       <strong class="boards"
-                        >${hsc} - <span>${hsc_year}</span></strong
+                        >HSC | ${hsc} | ${hsc_pr}- <span>${hsc_year}</span></strong
                       >
                     </p>
                     <span class="school">${hsc_school}</span>
@@ -378,7 +438,7 @@ module.exports = (values) => {
                   <div class="education-info">
                     <p>
                       <strong class="boards"
-                        >${ssc} - <span>${ssc_year}</span></strong
+                        >SSC | ${ssc} | ${ssc_pr} - <span>${ssc_year}</span></strong
                       >
                     </p>
                     <span class="school">${ssc_school}</span>
@@ -389,7 +449,7 @@ module.exports = (values) => {
                   <div class="education-info">
                     <p>
                       <strong class="diploma"
-                        >${diploma} - <span class="start">${diploma_start_year}</span> to
+                        >Diploma | ${diploma} - <span class="start">${diploma_start_year}</span> to
                         <span class="end">${diploma_end_year}</span></strong
                       >
                     </p>
@@ -520,7 +580,7 @@ module.exports = (values) => {
                     <div class="personal-project-name">
                       <span><strong>${project_title1} -</strong></span>
                       <span
-                        ><strong class="month"> ${project_time1} </strong
+                        ><strong class="month"> ${pt1} </strong
                         >
                       <span class="link"
                         ><strong>
@@ -540,7 +600,7 @@ module.exports = (values) => {
                     <div class="personal-project-name">
                       <span><strong>${project_title2} -</strong></span>
                       <span
-                        ><strong class="month"> ${project_time2} </strong
+                        ><strong class="month"> ${pt2} </strong
                         >
                       <span class="link"
                         ><strong>
@@ -560,7 +620,7 @@ module.exports = (values) => {
                     <div class="personal-project-name">
                       <span><strong>${project_title3} -</strong></span>
                       <span
-                        ><strong class="month"> ${project_time3} </strong
+                        ><strong class="month"> ${pt3} </strong
                         >
                       <span class="link"
                         ><strong>
@@ -700,7 +760,9 @@ module.exports = (values) => {
                   <div class="reference">
                     <p>
                       <strong class="prof-name">${prof_name1}</strong
-                      ><span class="link">${prof_link1}</span>
+                      >
+                      <a href="${prof_link1}" target="_blank"
+                            ><i class="fa-solid fa-link"></i></a>
                     </p>
                     <p><span>${prof_description1}</span></p>
                   </div>`;
@@ -710,7 +772,8 @@ module.exports = (values) => {
                   <div class="reference">
                     <p>
                       <strong class="prof-name">${prof_name2}</strong
-                      ><span class="link">${prof_link2}</span>
+                      ><a href="${prof_link2}" target="_blank"
+                      ><i class="fa-solid fa-link"></i></a>
                     </p>
                     <p><span>${prof_description2}</span></p>
                   </div>`;
