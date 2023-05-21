@@ -22,16 +22,10 @@ class Projects extends Component {
     if (
       values.project_title1.trim() === "" ||
       values.project_title2.trim() === "" ||
-      values.project_title3.trim() === "" ||
-      values.project_link1.trim() === "" ||
-      values.project_link2.trim() === "" ||
-      values.project_link3.trim() === "" ||
       values.project_description1.trim() === "" ||
       values.project_description2.trim() === "" ||
-      values.project_description3.trim() === "" ||
       values.project_time1.trim() === "" ||
-      values.project_time2.trim() === "" ||
-      values.project_time3.trim() === ""
+      values.project_time2.trim() === ""
     ) {
       return false;
     }
@@ -72,13 +66,13 @@ class Projects extends Component {
           <div className='w-[90%] m-auto'>
             <div className=''>
               <div>
-                <h5 className='my-2 text-white'>Project 1</h5>
+                <h5 className='my-2 text-white'>Project 1<span className="mandatory">*</span></h5>
               </div>
               <div className='my-3'>
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_title1"
-                  placeholder='Title*'
+                  placeholder='project title*'
                   label="project_title1"
                   required
                   value={values.project_title1}
@@ -90,9 +84,8 @@ class Projects extends Component {
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_link1"
                   label="project_link1"
-                  placeholder='Link*'
+                  placeholder='project link'
                   style={{width: '80%'}}
-                  required
                   type="url"
                   value={values.project_link1}
                   onChange={this.props.handleChange}
@@ -102,7 +95,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_time1"
-                  placeholder="Ex. April 2023"
+                  placeholder="Ex. April 2023*"
                   type='month'
                   style={{width: '80%'}}
                   required
@@ -114,7 +107,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_description1"
-                  placeholder="Description*"
+                  placeholder="description*"
                   style={{width: '80%'}}
                   required
                   value={values.project_description1}
@@ -133,7 +126,7 @@ class Projects extends Component {
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_title2"
-                  placeholder='Title*'
+                  placeholder='project title*'
                   label="project_title2"
                   required
                   value={values.project_title2}
@@ -146,9 +139,8 @@ class Projects extends Component {
                   name="project_link2"
                   type='url'
                   label="project_link2"
-                  placeholder='Link*'
+                  placeholder='project link'
                   style={{width: '80%'}}
-                  required
                   value={values.project_link2}
                   onChange={this.props.handleChange}
                 />
@@ -169,7 +161,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_description2"
-                  placeholder="Description*"
+                  placeholder="description*"
                   style={{width: '80%'}}
                   required
                   value={values.project_description2}
@@ -188,9 +180,8 @@ class Projects extends Component {
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_title3"
-                  placeholder='Title*'
+                  placeholder='project title'
                   label="project_title3"
-                  required
                   value={values.project_title3}
                   onChange={this.props.handleChange}
                 />
@@ -200,9 +191,8 @@ class Projects extends Component {
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_link3"
                   label="project_link3"
-                  placeholder='Link*'
+                  placeholder='project link'
                   style={{width: '80%'}}
-                  required
                   value={values.project_link3}
                   onChange={this.props.handleChange}
                 />
@@ -214,7 +204,6 @@ class Projects extends Component {
                   placeholder="Ex. June 2017"
                   type='month'
                   style={{width: '80%'}}
-                  required
                   value={values.project_time3}
                   onChange={this.props.handleChange}
                 />
@@ -223,9 +212,8 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_description3"
-                  placeholder="Description*"
+                  placeholder="description"
                   style={{width: '80%'}}
-                  required
                   value={values.project_description3}
                   onChange={this.props.handleChange}
                 />

@@ -31,7 +31,7 @@ class Experience extends Component {
     this.setState({ isLoading: true }); // Start the loader
 
     axios
-      .post("/api/create-pdf", this.props.values, {
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
@@ -87,6 +87,7 @@ class Experience extends Component {
 
   render() {
     const { values } = this.props;
+    values.collegeLOGO = "https://res.cloudinary.com/dllxcv4s8/image/upload/v1684387484/GECG_logo.png";
 
     return (
       <>
@@ -127,7 +128,7 @@ class Experience extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill1"
-                      placeholder="Skill 1"
+                      placeholder="skill 1"
                       value={values.skill1}
                       onChange={this.props.handleChange}
                     />
@@ -136,7 +137,7 @@ class Experience extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill2"
-                      placeholder="Skill 2"
+                      placeholder="skill 2"
                       value={values.skill2}
                       onChange={this.props.handleChange}
                     />
@@ -145,7 +146,7 @@ class Experience extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill3"
-                      placeholder="Skill 3"
+                      placeholder="skill 3"
                       value={values.skill3}
                       onChange={this.props.handleChange}
                     />
@@ -154,7 +155,7 @@ class Experience extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill4"
-                      placeholder="Skill 4"
+                      placeholder="skill 4"
                       value={values.skill4}
                       onChange={this.props.handleChange}
                     />
@@ -163,7 +164,7 @@ class Experience extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill5"
-                      placeholder="Skill 5"
+                      placeholder="skill 5"
                       value={values.skill5}
                       onChange={this.props.handleChange}
                     />
@@ -172,7 +173,7 @@ class Experience extends Component {
                     <input
                       className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       name="skill6"
-                      placeholder="Skill 6"
+                      placeholder="skill 6"
                       value={values.skill6}
                       onChange={this.props.handleChange}
                     />
