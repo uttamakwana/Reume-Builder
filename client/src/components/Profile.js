@@ -13,18 +13,19 @@ class Profile extends Component {
 
   allFieldsFilled = () => {
     const { values } = this.props;
-
     // Check if all required fields have a value
     if (
       values.firstname.trim() === "" ||
       values.lastname.trim() === "" ||
       values.email.trim() === "" ||
       values.phone.trim() === "" ||
-      values.address.trim() === ""
+      values.github.trim() === "" ||
+      values.linkedin.trim() === "" ||
+      values.address.trim() === "" ||
+      values.website.trim() === ""
     ) {
       return false;
     }
-
     return true;
   };
 
@@ -185,9 +186,9 @@ class Profile extends Component {
                 type="file"
                 id="file_input"
                 name="profile_img_url"
-                required
                 accept='image/*'
                 onChange={this.props.handleChange}
+                required
               />
               <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG  (MAX. 800x400px).</p>
             </div>

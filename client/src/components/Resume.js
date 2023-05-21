@@ -18,7 +18,8 @@ export class Resume extends Component {
     github: "",
     linkedin: "",
     address: "",
-    profile_img_url: "",
+    profile_img_url: "https://res.cloudinary.com/dllxcv4s8/image/upload/v1684578266/normal_user.jpg",
+    imgValue:false,
 
     // Education Information
     college: "",
@@ -42,15 +43,15 @@ export class Resume extends Component {
     // Project Information...
     project_title1: "",
     project_link1: "",
-    project_time1: "",
+    project_time1: new Date().toISOString().slice(0, 7),
     project_description1: "",
     project_title2: "",
     project_link2: "",
-    project_time2: "",
+    project_time2: new Date().toISOString().slice(0, 7),
     project_description2: "",
     project_title3: "",
     project_link3: "",
-    project_time3: "",
+    project_time3: new Date().toISOString().slice(0, 7),
     project_description3: "",
 
     // Experience Information
@@ -142,6 +143,9 @@ export class Resume extends Component {
           this.setState({
             profile_img_url: response.data.url,
           });
+          this.setState({
+            imgValue : true
+          })
         })
         .catch((error) => {
           console.log(error);
@@ -164,6 +168,7 @@ export class Resume extends Component {
          linkedin,
          address,
          profile_img_url,
+         imgValue,
 
          // Education Information
          college,
@@ -255,7 +260,6 @@ export class Resume extends Component {
     const values = {
       // Profile-Information
       // Profile-Information
-
          // Profile-Information
          firstname,
          lastname,
@@ -266,6 +270,7 @@ export class Resume extends Component {
          linkedin,
          address,
          profile_img_url,
+         imgValue,
 
          // Education Information
          college,

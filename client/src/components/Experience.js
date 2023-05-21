@@ -33,7 +33,7 @@ class Experience extends Component {
       values.internship_description1.trim() === "" ||
       values.internship_description2.trim() === ""
     ) {
-      return false;
+      return true;
     }
 
     return true;

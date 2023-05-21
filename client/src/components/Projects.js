@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 class Projects extends Component {
+
+
   continue = e => {
     e.preventDefault ();
     this.props.nextStep ();
@@ -22,10 +24,16 @@ class Projects extends Component {
     if (
       values.project_title1.trim() === "" ||
       values.project_title2.trim() === "" ||
+      values.project_title3.trim() === "" ||
+      values.project_link1.trim() === "" ||
+      values.project_link2.trim() === "" ||
+      values.project_link3.trim() === "" ||
       values.project_description1.trim() === "" ||
       values.project_description2.trim() === "" ||
+      values.project_description3.trim() === "" ||
       values.project_time1.trim() === "" ||
-      values.project_time2.trim() === ""
+      values.project_time2.trim() === "" ||
+      values.project_time3.trim() === ""
     ) {
       return false;
     }
@@ -35,6 +43,7 @@ class Projects extends Component {
 
   render () {
     const {values} = this.props;
+
 
     return (
       <>
