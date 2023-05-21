@@ -69,13 +69,13 @@ class Projects extends Component {
         />
       <div className="p-4 bg-clip-padding bg-gray-200 bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
         <div className="p-4">
-              <h3 className="text-2xl font-extrabold  text-white">Project Details</h3>
+              <h3 className="text-2xl font-extrabold  ">Project Details</h3>
             </div>
         <div>
           <div className='w-[90%] m-auto'>
             <div className=''>
               <div>
-                <h5 className='my-2 text-white'>Project 1<span className="mandatory">*</span></h5>
+                <h5 className='my-2 '>Project 1<span className="mandatory">*</span></h5>
               </div>
               <div className='my-3'>
                 <input
@@ -129,7 +129,7 @@ class Projects extends Component {
             <br />
             <div className=''>
               <div>
-                <h5 className='my-2 text-white'>Project 2</h5>
+                <h5 className='my-2 '>Project 2</h5>
               </div>
               <div className='my-3'>
                 <input
@@ -183,7 +183,7 @@ class Projects extends Component {
             <br />
             <div className=''>
               <div>
-                <h5 className='my-2 text-white'>Project 3</h5>
+                <h5 className='my-2 '>Project 3</h5>
               </div>
               <div className='my-3'>
                 <input
@@ -254,7 +254,7 @@ class Projects extends Component {
               )}
           </div>
 
-          <p className="text-center text-white opacity-[0.2]">Page 3</p>
+          <p className="text-center  opacity-[0.2]">Page 3</p>
       </div>
       </>
     );

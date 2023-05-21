@@ -67,12 +67,12 @@ class Experience extends Component {
 
       <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
         <div className="p-4">
-          <h3 className="text-2xl font-extrabold  text-white">Internship / Experience Details</h3>
+          <h3 className="text-2xl font-extrabold  ">Internship / Experience Details</h3>
         </div>
         <div>
           <div className="">
             <div className='w-[100%]'>
-              <h5 className='text-white'>
+              <h5 className=''>
                 <CheckCircleIcon />
                 <span className="pl-3">Internship / Experience - 1</span><span className="mandatory">*</span>
               </h5>
@@ -150,7 +150,7 @@ class Experience extends Component {
             <hr className='border broder-white' />
             <br />
             <div className='w-[100%]'>
-              <h5 className='text-white'>
+              <h5 className=''>
                 <CheckCircleIcon />
                 <span className="pl-3">Internship / Experience - 2</span>
               </h5>
@@ -221,7 +221,7 @@ class Experience extends Component {
               </div>
             </div>
             {/* <div className='w-[100%]'>
-              <h5 className='text-white'>
+              <h5 className=''>
                 <CheckCircleIcon />
                 <span className="pl-3">Experience 2</span>
               </h5>
@@ -299,7 +299,7 @@ class Experience extends Component {
               )}
           </div>
 
-          <p className="text-center text-white opacity-[0.2]">Page 4</p>
+          <p className="text-center  opacity-[0.2]">Page 4</p>
       </div>
       </>
     );

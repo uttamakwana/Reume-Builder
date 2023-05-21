@@ -66,14 +66,14 @@ class AOTAchievement extends Component {
           style={{ backdropFilter: "blur(20px)" }}
         >
           <div className="p-4">
-            <h3 className="text-2xl font-extrabold  text-white">
+            <h3 className="text-2xl font-extrabold  ">
               Extra Details - 1
             </h3>
           </div>
           <div>
             <div className="">
               <div className="flex flex-col">
-                <h5 className="text-white">
+                <h5 className="">
                   <CheckCircleIcon />
                   <span className="pl-3">Area of Interest</span>
                 </h5>
@@ -140,7 +140,7 @@ class AOTAchievement extends Component {
               <br />
               <br />
               <div className="flex flex-col">
-                <h5 className="text-white">
+                <h5 className="">
                   <CheckCircleIcon />
                   <span className="pl-3">Major Achievements</span>
                 </h5>
@@ -191,7 +191,7 @@ class AOTAchievement extends Component {
 
 
               <div className="flex flex-col">
-                <h5 className="text-white">
+                <h5 className="">
                   <CheckCircleIcon />
                   <span className="pl-3">References</span>
                 </h5>

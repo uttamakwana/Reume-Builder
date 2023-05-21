@@ -67,7 +67,7 @@ class Profile extends Component {
             style={{ backdropFilter: "blur(20px)" }}
           >
             <div className="p-4">
-              <h3 className="text-2xl font-extrabold  text-white">
+              <h3 className="text-2xl font-extrabold  ">
                 Education Details
               </h3>
             </div>
@@ -75,7 +75,7 @@ class Profile extends Component {
               <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
                 <div className="md:col-span-6">
                   <label
-                    className="block mb-2 font-medium  text-white"
+                    className="block mb-2 font-medium  "
                     htmlFor="college"
                   >
                     College<span className="mandatory">*</span>
@@ -92,7 +92,7 @@ class Profile extends Component {
                 </div>
                 <div className="md:col-span-6">
                   <label
-                    className="block mb-2 font-medium  text-white"
+                    className="block mb-2 font-medium  "
                     htmlFor="university"
                   >
                     University<span className="mandatory">*</span>
@@ -109,7 +109,7 @@ class Profile extends Component {
                 </div>
                 <div className="md:col-span-3">
                   <label
-                    className="block mb-2 font-medium  text-white"
+                    className="block mb-2 font-medium  "
                     htmlFor="degree_start_year"
                   >
                     From Year<span className="mandatory">*</span>
@@ -126,7 +126,7 @@ class Profile extends Component {
                 </div>
                 <div className="md:col-span-3">
                   <label
-                    className="block mb-2 font-medium  text-white"
+                    className="block mb-2 font-medium  "
                     htmlFor="degree_end_year"
                   >
                     To Year<span className="mandatory">*</span>
@@ -143,7 +143,7 @@ class Profile extends Component {
                 </div>
                 <div className="md:col-span-6">
                   <label
-                    className="block mb-2 font-medium  text-white"
+                    className="block mb-2 font-medium  "
                     htmlFor="degree"
                   >
                     Qualification<span className="mandatory">*</span>
@@ -159,7 +159,7 @@ class Profile extends Component {
                   />
                 </div>
                 {/* <div className="md:col-span-8">
-                  <label className="block mb-2 font-medium  text-white" htmlFor="description1">
+                  <label className="block mb-2 font-medium  " htmlFor="description1">
                     Description
                   </label>
                   <input
@@ -182,12 +182,12 @@ class Profile extends Component {
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
 
                   <div className="md:col-span-6">
-                    <label className="mr-2 font-medium text-white" >10/12th</label>
+                    <label className="mr-2 font-medium " >10/12th</label>
                     <input type="radio" name="school" onClick={() => {this.setState({isDiploma : true}); console.log("first", this.state.isDiploma)}}/>
                   </div>
 
                   <div className="md:col-span-6">
-                    <label className="mr-2 font-medium text-white">Diploma</label>
+                    <label className="mr-2 font-medium ">Diploma</label>
                     <input type="radio" name="school" onClick= {() => {this.setState({isDiploma : false}); console.log("second", this.state.isDiploma)}}/>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ class Profile extends Component {
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="ssc"
                       >
                         10th Board<span className="mandatory">*</span>
@@ -216,7 +216,7 @@ class Profile extends Component {
                     </div>
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="ssc_pr"
                       >
                         10th Percentage<span className="mandatory">*</span>
@@ -233,7 +233,7 @@ class Profile extends Component {
                     </div>
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="ssc_school"
                       >
                         School Name<span className="mandatory">*</span>
@@ -250,7 +250,7 @@ class Profile extends Component {
                     </div>
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="ssc_year"
                       >
                         10th passing year<span className="mandatory">*</span>
@@ -268,7 +268,7 @@ class Profile extends Component {
 
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="hsc"
                       >
                         12th Board<span className="mandatory">*</span>
@@ -285,7 +285,7 @@ class Profile extends Component {
                     </div>
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="hsc_pr"
                       >
                         12th Percentage<span className="mandatory">*</span>
@@ -302,7 +302,7 @@ class Profile extends Component {
                     </div>
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="hsc_school"
                       >
                         School Name<span className="mandatory">*</span>
@@ -319,7 +319,7 @@ class Profile extends Component {
                     </div>
                     <div className="md:col-span-3">
                       <label
-                        className="block mb-2 font-medium  text-white"
+                        className="block mb-2 font-medium  "
                         htmlFor="hsc_year"
                       >
                         12th passing year<span className="mandatory">*</span>
@@ -342,7 +342,7 @@ class Profile extends Component {
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
                   <div className="md:col-span-6">
                     <label
-                      className="block mb-2 font-medium  text-white"
+                      className="block mb-2 font-medium  "
                       htmlFor="diploma"
                     >
                       Diploma Course
@@ -359,7 +359,7 @@ class Profile extends Component {
                   </div>
                   <div className="md:col-span-6">
                     <label
-                      className="block mb-2 font-medium  text-white"
+                      className="block mb-2 font-medium  "
                       htmlFor="diploma_place"
                     >
                       University/College Name
@@ -376,7 +376,7 @@ class Profile extends Component {
                   </div>
                   <div className="md:col-span-6">
                     <label
-                      className="block mb-2 font-medium  text-white"
+                      className="block mb-2 font-medium  "
                       htmlFor="diploma_start_year"
                     >
                       Start year
@@ -394,7 +394,7 @@ class Profile extends Component {
 
                   <div className="md:col-span-6">
                     <label
-                      className="block mb-2 font-medium  text-white"
+                      className="block mb-2 font-medium  "
                       htmlFor="diploma_end_year"
                     >
                       End year
@@ -433,7 +433,7 @@ class Profile extends Component {
               )}
             </div>
 
-            <p className="text-center text-white opacity-[0.2]">Page 2</p>
+            <p className="text-center  opacity-[0.2]">Page 2</p>
           </div>
         </div>
       </>

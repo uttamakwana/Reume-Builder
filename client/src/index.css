@@ -13,8 +13,8 @@ html{
 }
 body {
   /* height: 100vh; */
-  background-image: linear-gradient(to right top, #0c182a, #011e29, #082223, #17241d, #23261d);
-
+  /* background-image: linear-gradient(to right top, #0c182a, #011e29, #082223, #17241d, #23261d); */
+  background-color: white;
 
 }
 .mandatory{
