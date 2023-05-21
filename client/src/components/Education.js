@@ -181,13 +181,15 @@ class Profile extends Component {
             <div className="p-4">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-12">
 
-                  <div className="md:col-span-6">
+                  {
+                    this.state.isDiploma === false ? <div className="md:col-span-6">
                     <label className="mr-2 font-medium " >10/12th</label>
                     <input type="radio" name="school" onClick={() => {this.setState({isDiploma : true}); console.log("first", this.state.isDiploma)}}/>
-                  </div>
+                  </div> : ""
+                  }
 
-                  <div className="md:col-span-6">
-                    <label className="mr-2 font-medium ">Diploma</label>
+                  <div className={"" +(this.state.isDiploma === true ? 'md:col-span-12' : 'md:col-span-6')}>
+                    <label className="mr-2 font-medium">Diploma</label>
                     <input type="radio" name="school" onClick= {() => {this.setState({isDiploma : false}); console.log("second", this.state.isDiploma)}}/>
                   </div>
                 </div>

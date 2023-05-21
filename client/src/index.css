@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600;1,700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -14,11 +16,82 @@ html{
 body {
   /* height: 100vh; */
   /* background-image: linear-gradient(to right top, #0c182a, #011e29, #082223, #17241d, #23261d); */
-  background-color: white;
+  background-color: whitesmoke;
 
+}
+
+div.font-mono:nth-child(2){
+  height: 90vh;
 }
 .mandatory{
   padding-left: 3px;
   color: red;
   font-weight: bold;
+}
+
+.bg-clip-padding{
+  /* border: 1px solid black; */
+  width: 80vw;
+  max-width: 980px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: .25rem !important;
+}
+
+button{
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: .25rem !important;
+}
+
+p{
+  opacity: .8 !important;
+}
+
+nav{
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header{
+  margin-bottom: 2rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+nav h1{
+  font-size: 2.5rem;
+  font-family: 'Lora', sans-serif;
+  font-weight: 700;
+}
+
+footer{
+  margin-top: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  padding: 1rem;
+}
+
+footer h1{
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Lora', 'Poppins', sans-serif;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.about{
+  text-align: center;
+}
+
+.about-description{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (max-width: 600px){
+  .about-description{
+    flex-direction: column;
+  }
 }

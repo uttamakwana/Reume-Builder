@@ -19,10 +19,8 @@ class Profile extends Component {
       values.lastname.trim() === "" ||
       values.email.trim() === "" ||
       values.phone.trim() === "" ||
-      values.github.trim() === "" ||
-      values.linkedin.trim() === "" ||
       values.address.trim() === "" ||
-      values.website.trim() === ""
+      values.imgValue === false 
     ) {
       return false;
     }
@@ -212,7 +210,7 @@ class Profile extends Component {
               )}
           </div>
 
-          <p className="text-center  opacity-[0.2]">Page 1</p>
+          <p className="text-center opacity-[0.2]">Page 1</p>
         </div>
 
 
