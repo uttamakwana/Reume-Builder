@@ -1,13 +1,13 @@
 import React from "react";
-
+import ResumeLogo from '../assets/images/resume-logo.png'
 const Header = () => {
   return (
     <header>
       <nav>
         <img
-          src="images/resume-logo.png"
+          src={ResumeLogo}
           alt="logo"
-          style={{width: "100px", height: "100px"}}
+          id="nav-logo"
         />
         <h1 id="resume-builder-logo-text">Resume Builder</h1>
       </nav>

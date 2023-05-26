@@ -493,7 +493,7 @@ module.exports = (values) => {
               </div>
             </div>
           </div>`;
-  if (true) {
+  if (company1 !== "") {
     htmlTemplate += `
             <div class="odd">
               <div class="internship-experience-container">

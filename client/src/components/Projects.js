@@ -24,16 +24,16 @@ class Projects extends Component {
     if (
       values.project_title1.trim() === "" ||
       values.project_title2.trim() === "" ||
-      values.project_title3.trim() === "" ||
+      // values.project_title3.trim() === "" ||
       values.project_link1.trim() === "" ||
       values.project_link2.trim() === "" ||
-      values.project_link3.trim() === "" ||
+      // values.project_link3.trim() === "" ||
       values.project_description1.trim() === "" ||
       values.project_description2.trim() === "" ||
-      values.project_description3.trim() === "" ||
+      // values.project_description3.trim() === "" ||
       values.project_time1.trim() === "" ||
-      values.project_time2.trim() === "" ||
-      values.project_time3.trim() === ""
+      values.project_time2.trim() === ""
+      // values.project_time3.trim() === ""
     ) {
       return false;
     }
@@ -81,6 +81,7 @@ class Projects extends Component {
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_title1"
+                  type="text"
                   placeholder='project title*'
                   label="project_title1"
                   required
@@ -95,7 +96,7 @@ class Projects extends Component {
                   label="project_link1"
                   placeholder='project link'
                   style={{width: '80%'}}
-                  type="url"
+                  type="text"
                   value={values.project_link1}
                   onChange={this.props.handleChange}
                 />
@@ -118,6 +119,7 @@ class Projects extends Component {
                   name="project_description1"
                   placeholder="description*"
                   style={{width: '80%'}}
+                  type='text'
                   required
                   value={values.project_description1}
                   onChange={this.props.handleChange}
@@ -135,6 +137,7 @@ class Projects extends Component {
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_title2"
+                  type='text'
                   placeholder='project title*'
                   label="project_title2"
                   required
@@ -146,7 +149,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_link2"
-                  type='url'
+                  type='text'
                   label="project_link2"
                   placeholder='project link'
                   style={{width: '80%'}}
@@ -170,6 +173,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_description2"
+                  type='text'
                   placeholder="description*"
                   style={{width: '80%'}}
                   required
@@ -189,6 +193,7 @@ class Projects extends Component {
                 <input
                 className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_title3"
+                  type='text'
                   placeholder='project title'
                   label="project_title3"
                   value={values.project_title3}
@@ -199,6 +204,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_link3"
+                  type='text'
                   label="project_link3"
                   placeholder='project link'
                   style={{width: '80%'}}
@@ -221,6 +227,7 @@ class Projects extends Component {
                 <input
                   className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                   name="project_description3"
+                  type='text'
                   placeholder="description"
                   style={{width: '80%'}}
                   value={values.project_description3}

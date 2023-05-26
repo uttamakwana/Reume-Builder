@@ -55,7 +55,7 @@ class Experience extends Component {
     this.setState({ showModal: true }); // Open the modal
     this.setState({ isLoading: true });
     axios
-      .post("/api/create-pdf", this.props.values, {
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
