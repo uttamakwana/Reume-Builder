@@ -23,10 +23,10 @@ class AOTAchievement extends Component {
     if (
       values.interest1.trim() === "" ||
       values.interest2.trim() === "" ||
-      values.interest3.trim() === "" ||
-      values.interest4.trim() === "" ||
+      // values.interest3.trim() === "" ||
+      // values.interest4.trim() === "" ||
       values.achievement1.trim() === "" ||
-      values.achievement2.trim() === "" ||
+      // values.achievement2.trim() === "" ||
       values.prof_name1.trim() === "" ||
       values.prof_link1.trim() === "" ||
       values.prof_description1.trim() === ""
@@ -66,167 +66,176 @@ class AOTAchievement extends Component {
           style={{ backdropFilter: "blur(20px)" }}
         >
           <div className="p-4">
-            <h3 className="text-2xl font-extrabold  text-white">
+            <h3 className="text-2xl font-extrabold  ">
               Extra Details - 1
             </h3>
           </div>
           <div>
             <div className="">
               <div className="flex flex-col">
-                <h5 className="text-white">
+                <h5 className="">
                   <CheckCircleIcon />
                   <span className="pl-3">Area of Interest</span>
                 </h5>
                 <br />
-                <div>
-                  <div className="flex flex-wrap items-center justify-center">
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="interest1"
-                        placeholder="Ex:- Web Developer"
-                        value={values.interest1}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="interest2"
-                        placeholder="Ex:- Android Developer"
-                        value={values.interest2}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="interest3"
-                        placeholder="Ex:- Full Stack Developer"
-                        value={values.interest3}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="interest4"
-                        placeholder="Ex:- Project Manager"
-                        value={values.interest4}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="interest5"
-                        placeholder="Ex:- Data Scientist"
-                        value={values.interest5}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="interest6"
-                        placeholder="Ex:- Cyber Security Engineer"
-                        value={values.interest6}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
+                <div className="flex flex-wrap items-center justify-center">
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      name="interest1"
+                      type="text"
+                      placeholder="Interest 1"
+                      value={values.interest1}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="interest2"
+                      placeholder="Interest 2"
+                      value={values.interest2}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="interest3"
+                      placeholder="Interest 3"
+                      value={values.interest3}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="interest4"
+                      placeholder="Interest 4"
+                      value={values.interest4}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="interest5"
+                      placeholder="Interest 5"
+                      value={values.interest5}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="interest6"
+                      placeholder="Interest 6"
+                      value={values.interest6}
+                      onChange={this.props.handleChange}
+                    />
                   </div>
                 </div>
+              </div>
+
+              <hr className="border border-white mt-5" />
+              <br />
+              <br />
+              <div className="flex flex-col">
+                <h5 className="">
+                  <CheckCircleIcon />
+                  <span className="pl-3">Major Achievements</span>
+                </h5>
+                <br />
+                <div className="flex flex-wrap items-center justify-center">
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="achievement1"
+                      placeholder="Achievement 1"
+                      value={values.achievement1}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="achievement2"
+                      placeholder="Achievement 2"
+                      value={values.achievement2}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="achievement3"
+                      placeholder="Achievement 3"
+                      value={values.achievement3}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="achievement4"
+                      placeholder="Achievement 4"
+                      value={values.achievement4}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                </div>
+              </div>
 
                 <hr className="border border-white mt-5" />
                 <br />
                 <br />
-                <div className="flex flex-col">
-                  <h5 className="text-white">
-                    <CheckCircleIcon />
-                    <span className="pl-3">Major Achievements</span>
-                  </h5>
-                  <br />
-                  <div className="flex flex-wrap items-center justify-center">
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="achievement1"
-                        placeholder="Ex:- Received awards"
-                        required
-                        value={values.achievement1}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="achievement2"
-                        placeholder="Achievement 2"
-                        value={values.achievement2}
-                        required
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="achievement3"
-                        placeholder="Achievement 3"
-                        value={values.achievement3}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="achievement4"
-                        placeholder="Achievement 4"
-                        value={values.achievement4}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
+
+
+              <div className="flex flex-col">
+                <h5 className="">
+                  <CheckCircleIcon />
+                  <span className="pl-3">References</span>
+                </h5>
+                <br />
+                <div className="flex flex-wrap items-center justify-center">
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="prof_name1"
+                      placeholder="Professor Name 1"
+                      value={values.prof_name1}
+                      onChange={this.props.handleChange}
+                    />
                   </div>
-                </div>
-
-                <hr className="border border-white mt-5" />
-                <br />
-                <br />
-
-                <div className="flex flex-col">
-                  <h5 className="text-white">
-                    <CheckCircleIcon />
-                    <span className="pl-3">References</span>
-                  </h5>
-                  <br />
-                  <div className="flex flex-wrap items-center justify-center">
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="prof_name1"
-                        placeholder="professor name"
-                        value={values.prof_name1}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="prof_link1"
-                        type="url"
-                        placeholder="insert drive link of LOR PDF signed by professor"
-                        value={values.prof_link1}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
-                    <div className="m-3">
-                      <input
-                        className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                        name="prof_description1"
-                        placeholder="Professor Description 1"
-                        value={values.prof_description1}
-                        onChange={this.props.handleChange}
-                      />
-                    </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      name="prof_link1"
+                      type="text"
+                      placeholder="Professor Link 1"
+                      value={values.prof_link1}
+                      onChange={this.props.handleChange}
+                    />
+                  </div>
+                  <div className="m-3">
+                    <input
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      type="text"
+                      name="prof_description1"
+                      placeholder="Professor Description 1"
+                      value={values.prof_description1}
+                      onChange={this.props.handleChange}
+                    />
                   </div>
 
                   {/* <div className="m-3">

@@ -31,7 +31,7 @@ class Experience extends Component {
     this.setState({ isLoading: true }); // Start the loader
 
     axios
-      .post("/api/create-pdf", this.props.values, {
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ class Experience extends Component {
     this.setState({ showModal: true }); // Open the modal
     this.setState({ isLoading: true });
     axios
-      .post("/api/create-pdf", this.props.values, {
+      .post("http://localhost:4000/api/create-pdf", this.props.values, {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json'
@@ -129,12 +129,12 @@ class Experience extends Component {
         />
         <div className="p-2 lg:p-3 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
           <div className="p-4">
-            <h3 className="text-2xl font-extrabold  text-white">Extra Details - 2</h3>
+            <h3 className="text-2xl font-extrabold  ">Extra Details - 2</h3>
           </div>
           <div>
             <div>
               <div className='flex flex-col'>
-                <h5 className='text-white'>
+                <h5 className=''>
                   <CheckCircleIcon />
                   <span className="pl-3">Skills</span>
                 </h5>
@@ -201,7 +201,7 @@ class Experience extends Component {
               <br />
               <br />
               <div className='flex flex-col'>
-                <h5 className='text-white'>
+                <h5 className=''>
                   <CheckCircleIcon />
                   <span className="pl-3">Programming Languages</span>
                 </h5>
