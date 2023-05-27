@@ -3,34 +3,44 @@ import React from "react";
 const Cards = (props) => {
   return (
     <>
-      <div class="relative flex w-96 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-        <div class="relative mx-4 mt-4 h-80 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-          <img src={props.imgURL} alt="profile-picture" />
-        </div>
-        <div class="p-6 text-center">
-          <h4 class="mb-2 block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-            {props.fName}
-          </h4>
-          <p class="block bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
-            {props.branch}
-          </p>
-        </div>
-        <div class="flex justify-center gap-7 p-6 pt-2">
+      <div
+        class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600"
+        data-aos="flip-right"
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+      >
+        <img
+          class="w-32 h-32 rounded-full ring-4 ring-gray-300 object-cover"
+          src={props.imgURL}
+          alt=""
+        />
+
+        <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
+          {props.fName}
+        </h1>
+
+        <p class="mt-2 text-gray-500 capitalize group-hover:text-gray-300">
+          design director
+        </p>
+
+        <div class="flex mt-3 -mx-2">
           <a
             href="#facebook"
-            class="block bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
+            class="mx-2 text-gray-600 hover:text-gray-500  group-hover:text-white"
           >
             <i class="fab fa-github" aria-hidden="true"></i>
           </a>
           <a
             href="#twitter"
-            class="block bg-blue-500 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
+            class="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
           >
             <i class="fab fa-linkedin" aria-hidden="true"></i>
           </a>
           <a
             href="#instagram"
-            class="block bg-gradient-to-tr from-purple-600 to-purple-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
+            class="mx-2 text-gray-600  hover:text-gray-500  group-hover:text-white"
           >
             <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>

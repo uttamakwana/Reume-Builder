@@ -200,15 +200,16 @@ class Profile extends Component {
                   <label className="block mb-2 font-medium  " htmlFor="degree">
                     Qualification<span className="mandatory">*</span>
                   </label>
-                  <input
+                  <select
                     className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                    type="text"
-                    placeholder="Ex:- BE/ME"
                     id="degree"
                     name="degree"
                     value={values.degree}
                     onChange={this.props.handleChange}
-                  />
+                  >
+                  <option value="BE">BE</option>
+                  <option value="ME">ME</option>
+                  </select>
                 </div>
                 {/* <div className="md:col-span-8">
                   <label className="block mb-2 font-medium  " htmlFor="description1">

@@ -11,6 +11,10 @@ class Profile extends Component {
     this.props.nextStep();
   };
 
+  handleClick = () => {
+    window.location.reload();
+  };
+
   allFieldsFilled = () => {
     const { values } = this.props;
     // Check if all required fields have a value
@@ -20,7 +24,7 @@ class Profile extends Component {
       values.email.trim() === "" ||
       values.phone.trim() === "" ||
       values.address.trim() === "" ||
-      values.imgValue === false 
+      values.imgValue === false
     ) {
       return false;
     }
@@ -193,7 +197,7 @@ class Profile extends Component {
 
           <div className="m-3 mt-5 flex justify-between">
                 <button
-                  className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full hover:cursor-not-allowed'
+                  className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full' onClick={this.handleClick}
                 >
                   Back
                 </button>

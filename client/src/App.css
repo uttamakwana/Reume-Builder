@@ -6,15 +6,6 @@ label{
   color: black;
 }
 
-button, input{
-  font-family: 'Poppins', sans-serif;
-}
-
-div{
-  font-family: 'Ubuntu', sans-serif;
-  color: black;
-}
-
 /* input[type="file"] {
   width: 100%;
   color: white;
