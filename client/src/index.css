@@ -7,43 +7,16 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 html {
   scroll-behavior: smooth;
-}
-body {
-  /* height: 100vh; */
-  /* background-image: linear-gradient(to right top, #0c182a, #011e29, #082223, #17241d, #23261d); */
-  /* background-color: whitesmoke; */
+
 }
 
-div.font-mono:nth-child(2) {
-  height: 90vh;
-}
-.mandatory {
-  padding-left: 3px;
-  color: red;
-  font-weight: bold;
-}
-
-.bg-clip-padding {
-  /* border: 1px solid black; */
-  width: 80vw;
-  max-width: 980px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  border-radius: 0.25rem !important;
-}
-
-button {
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  border-radius: 0.25rem !important;
-}
-
-p {
-  opacity: 0.8 !important;
+body{
+  background-color: #121212 !important;
 }
 
 /* Header CSS */

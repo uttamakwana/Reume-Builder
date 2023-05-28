@@ -65,21 +65,21 @@ class Experience extends Component {
           }}
         />
 
-      <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
+      <div className="p-4 bg-clip-padding bg-gray-700  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{ backdropFilter: "blur(20px)" }}>
         <div className="p-4">
-          <h3 className="text-2xl font-extrabold  ">Internship / Experience Details</h3>
+          <h3 className="text-2xl font-extrabold text-white">Internship / Experience Details</h3>
         </div>
         <div>
           <div className="">
             <div className='w-[100%]'>
-              <h5 className=''>
-                <CheckCircleIcon />
-                <span className="pl-3">Internship / Experience - 1</span><span className="mandatory">*</span>
+              <h5 className='text-white'>
+                <CheckCircleIcon  />
+                <span className="pl-3 text-white">Internship / Experience - 1</span><span className="pl-1 text-red-500">*</span>
               </h5>
               <div className='flex flex-col' />
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="company1"
                   placeholder="Institue/Organisation/Company name*"
                   style={{ width: '90%' }}
@@ -90,7 +90,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="position1"
                   placeholder="position*"
                   style={{ width: '90%' }}
@@ -101,7 +101,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="internship_link1"
                   placeholder="Ex:- https://www.tcs.com/"
                   style={{ width: '90%' }}
@@ -111,7 +111,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="internship_start_year1"
                   placeholder="start year*"
                   style={{ width: '90%' }}
@@ -124,7 +124,7 @@ class Experience extends Component {
 
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="internship_end_year1"
                   placeholder="end year*"
                   style={{ width: '90%' }}
@@ -136,7 +136,7 @@ class Experience extends Component {
 
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   placeholder='description*'
                   style={{ width: '90%' }}
                   name="internship_description1"
@@ -149,15 +149,15 @@ class Experience extends Component {
             <br />
             <hr className='border broder-white' />
             <br />
-            <div className='w-[100%]'>
+            <div className='w-[100%] text-white'>
               <h5 className=''>
                 <CheckCircleIcon />
-                <span className="pl-3">Internship / Experience - 2</span>
+                <span className="pl-3 text-white">Internship / Experience - 2</span>
               </h5>
               <div className='flex flex-col' />
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="company2"
                   placeholder="Institue/Organisation/Company name"
                   style={{ width: '90%' }}
@@ -167,7 +167,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="position2"
                   placeholder="position"
                   style={{ width: '90%' }}
@@ -177,7 +177,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="internship_link2"
                   placeholder="Ex:- https://in.indeed.com/"
                   style={{ width: '90%' }}
@@ -188,7 +188,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="internship_start_year2"
                   placeholder="start year"
                   style={{ width: '90%' }}
@@ -200,7 +200,7 @@ class Experience extends Component {
 
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="internship_end_year2"
                   placeholder="end year"
                   style={{ width: '90%' }}
@@ -211,7 +211,7 @@ class Experience extends Component {
 
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   placeholder='sescription'
                   style={{ width: '90%' }}
                   name="internship_description2"
@@ -223,12 +223,12 @@ class Experience extends Component {
             {/* <div className='w-[100%]'>
               <h5 className=''>
                 <CheckCircleIcon />
-                <span className="pl-3">Experience 2</span>
+                <span className="pl-3 text-white">Experience 2</span>
               </h5>
               <div className='flex flex-col' />
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="institute2"
                   placeholder="Institue/Organisation*"
                   style={{ width: '90%' }}
@@ -239,7 +239,7 @@ class Experience extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="position2"
                   placeholder="Position*"
                   style={{ width: '90%' }}
@@ -252,7 +252,7 @@ class Experience extends Component {
 
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="duration2"
                   placeholder="Duration*"
                   style={{ width: '90%' }}
@@ -264,7 +264,7 @@ class Experience extends Component {
 
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   placeholder='Description*'
                   style={{ width: '90%' }}
                   name="experienceDescription2"

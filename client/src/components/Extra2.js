@@ -62,10 +62,10 @@ class AOTAchievement extends Component {
           }}
         />
         <div
-          className="p-2 lg:p-3 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto"
+          className="p-2 lg:p-3 bg-clip-padding bg-gray-700  bg-opacity-10  rounded-2xl w-[100%] lg:w-[60%] m-auto"
           style={{ backdropFilter: "blur(20px)" }}
         >
-          <div className="p-4">
+          <div className="p-4 text-white">
             <h3 className="text-2xl font-extrabold  ">
               Extra Details - 1
             </h3>
@@ -73,7 +73,7 @@ class AOTAchievement extends Component {
           <div>
             <div className="">
               <div className="flex flex-col">
-                <h5 className="">
+                <h5 className="text-white">
                   <CheckCircleIcon />
                   <span className="pl-3">Area of Interest</span>
                 </h5>
@@ -81,7 +81,7 @@ class AOTAchievement extends Component {
                 <div className="flex flex-wrap items-center justify-center">
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       name="interest1"
                       type="text"
                       placeholder="Interest 1"
@@ -91,7 +91,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="interest2"
                       placeholder="Interest 2"
@@ -101,7 +101,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="interest3"
                       placeholder="Interest 3"
@@ -111,7 +111,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="interest4"
                       placeholder="Interest 4"
@@ -121,7 +121,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="interest5"
                       placeholder="Interest 5"
@@ -131,7 +131,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="interest6"
                       placeholder="Interest 6"
@@ -146,7 +146,7 @@ class AOTAchievement extends Component {
               <br />
               <br />
               <div className="flex flex-col">
-                <h5 className="">
+                <h5 className="text-white">
                   <CheckCircleIcon />
                   <span className="pl-3">Major Achievements</span>
                 </h5>
@@ -154,7 +154,7 @@ class AOTAchievement extends Component {
                 <div className="flex flex-wrap items-center justify-center">
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="achievement1"
                       placeholder="Achievement 1"
@@ -164,7 +164,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="achievement2"
                       placeholder="Achievement 2"
@@ -174,7 +174,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="achievement3"
                       placeholder="Achievement 3"
@@ -184,7 +184,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="achievement4"
                       placeholder="Achievement 4"
@@ -201,7 +201,7 @@ class AOTAchievement extends Component {
 
 
               <div className="flex flex-col">
-                <h5 className="">
+                <h5 className="text-white">
                   <CheckCircleIcon />
                   <span className="pl-3">References</span>
                 </h5>
@@ -209,7 +209,7 @@ class AOTAchievement extends Component {
                 <div className="flex flex-wrap items-center justify-center">
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="prof_name1"
                       placeholder="Professor Name 1"
@@ -219,7 +219,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       name="prof_link1"
                       type="text"
                       placeholder="Professor Link 1"
@@ -229,7 +229,7 @@ class AOTAchievement extends Component {
                   </div>
                   <div className="m-3">
                     <input
-                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                      className="block px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                       type="text"
                       name="prof_description1"
                       placeholder="Professor Description 1"

@@ -6,8 +6,12 @@ import Experience from "./Experience";
 import Extras from "./Extras";
 import Extra2 from "./Extra2";
 import axios from "axios";
+import Modal from 'react-modal';
+import { Watch } from 'react-loader-spinner'
 
 export class Resume extends Component {
+
+
   state = {
     step: 1,
     // Personal Profile Details...
@@ -108,6 +112,8 @@ export class Resume extends Component {
     prof_name2: "",
     prof_link2: "",
     prof_description2: "",
+    showModal: false,
+    isLoading: false
   };
 
   nextStep = () => {
@@ -126,6 +132,8 @@ export class Resume extends Component {
 
   handleChange = ({ target: { value, name }, target }) => {
     if (name === "profile_img_url") {
+      this.setState({ showModal: true }); // Open the modal
+      this.setState({ isLoading: true }); // Start the loader
       this.setState({
         selectedFile: target.files[0],
       });
@@ -146,6 +154,8 @@ export class Resume extends Component {
           this.setState({
             imgValue : true
           })
+          this.setState({ isLoading: false }); // Stop the loader
+          this.setState({ showModal: false }); // Close the modal
         })
         .catch((error) => {
           console.log(error);
@@ -361,6 +371,7 @@ export class Resume extends Component {
     switch (step) {
       case 1:
         return (
+          <>
           <div className=" font-mono">
             <div className="container col-lg-10 mx-auto text-center">
               <Profile
@@ -370,6 +381,51 @@ export class Resume extends Component {
               />
             </div>
           </div>
+          <Modal
+              isOpen={this.state.showModal}
+              contentLabel="Loading..."
+              style={{
+                overlay: {
+                  position: 'fixed',
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundColor: '#E9E9E98F'
+                },
+                content: {
+                  position: 'absolute',
+                  display:'flex',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  width:'200px',
+                  height:'200px',
+                  margin:'auto',
+                  border: '1px solid',
+                  background: '#070313',
+                  overflow: 'auto',
+                  WebkitOverflowScrolling: 'touch',
+                  borderRadius: '100px',
+                  outline: 'none',
+                  padding: '20px'
+                }
+              }}
+            >
+              <Watch
+                height="100"
+                width="100"
+                radius="48"
+                color="#FFFFFF"
+                ariaLabel="watch-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              />
+            </Modal>
+          </>
         );
       case 2:
         return (
@@ -441,6 +497,7 @@ export class Resume extends Component {
       default:
         return <div />;
     }
+
   }
 }
 

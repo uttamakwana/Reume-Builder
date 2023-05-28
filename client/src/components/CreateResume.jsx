@@ -10,6 +10,7 @@ const CreateResume = ({ setIsClick }) => {
   return (
     <>
       <ScrollToTop />
+
       <div>
         {/* <main class="main-content">
         <h1>The Best Free Online Resume Builder</h1>
@@ -19,7 +20,7 @@ const CreateResume = ({ setIsClick }) => {
         <
       </main> */}
         <div
-          class="container px-6 py-16 mx-auto text-center"
+          class="container px-6 py-16 mx-auto text-white"
           data-aos="zoom-in"
           data-aos-duration="500"
           data-aos-easing="ease-in-out"
@@ -27,10 +28,10 @@ const CreateResume = ({ setIsClick }) => {
           data-aos-once="true"
         >
           <div class=" lg:w-max mx-auto">
-            <h1 class="text-3xl font-semibold text-gray-800 lg:text-4xl">
+            <h1 class="text-3xl font-semibold text-white text-center lg:text-4xl">
               The Best Free Online Resume Builder.
             </h1>
-            <p class="mt-6 max-w-2xl text-gray-500">
+            <p class="mt-6 max-w-2xl text-white text-center">
               Unleash the power of your resume with ResumeBuilder. Create an
               attention-grabbing resume that sets you apart and leads to career
               success. Start your journey today and land your dream job.
@@ -42,7 +43,7 @@ const CreateResume = ({ setIsClick }) => {
             onClick={() => {
               setIsClick(true);
             }}
-            className="px-8 py-3 text-white transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 mb-28"
+            className=" text-white font-semibold  py-2 px-4 border-[0.2px] border-gray-500 rounded my-10 mb-16"
             data-aos="zoom-in"
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
@@ -54,7 +55,6 @@ const CreateResume = ({ setIsClick }) => {
         </div>
         <hr />
         <Team />
-
       </div>
     </>
   );

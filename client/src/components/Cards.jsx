@@ -4,7 +4,7 @@ const Cards = (props) => {
   return (
     <>
       <div
-        class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-blue-600"
+        class="flex flex-col bg-transparent items-center p-8 transition-colors duration-300 transform border-[0.8px] border-gray-500 cursor-pointer rounded-xl hover:bg-gray-500 scale-[0.9]"
         data-aos="flip-right"
         data-aos-duration="500"
         data-aos-easing="ease-in-out"
@@ -12,12 +12,12 @@ const Cards = (props) => {
         data-aos-once="false"
       >
         <img
-          class="w-32 h-32 rounded-full ring-4 ring-gray-300 object-cover"
+          class="w-32 h-32 rounded-full ring-4 ring-gray-700 object-cover"
           src={props.imgURL}
           alt=""
         />
 
-        <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize  group-hover:text-white">
+        <h1 class="mt-4 text-2xl font-semibold text-gray-300 capitalize  group-hover:text-white">
           {props.fName}
         </h1>
 

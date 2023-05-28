@@ -7,14 +7,14 @@ import Gunjan from "../assets/images/gunjan.jpg";
 
 const Team = () => {
   return (
-    <section class="bg-white">
+    <section class="">
       <div class="container px-6 py-10 mx-auto" data-aos="zoom-out"
           data-aos-duration="500"
         //   data-aos-delay ="400"
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
           data-aos-once="true">
-        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl">
+        <h1 class="text-2xl font-semibold text-center text-white capitalize lg:text-3xl">
           Our Executive Team
         </h1>
 

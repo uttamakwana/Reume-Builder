@@ -60,16 +60,16 @@ class Profile extends Component {
           }}
         />
 
-        <div className="p-4 bg-clip-padding bg-gray-200  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
-          <div className="font-bold mb-10 text-2xl ">Personal Details</div>
+        <div className="p-4 bg-clip-padding bg-gray-700  bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
+          <div className="font-bold mb-10 text-2xl text-white ">Personal Details</div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2">
 
             <div>
-              <label className="block  font-bold mb-2">
-                First Name<span className="mandatory">*</span>
+              <label className="block text-white font-bold mb-2">
+                First Name<span className="pl-1 text-red-500">*</span>
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white "
                 type="text"
                 placeholder="first name"
                 name="firstname"
@@ -80,11 +80,11 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label className="block  font-bold mb-2">
-                Last Name<span className="mandatory">*</span>
+              <label className="block text-white font-bold mb-2">
+                Last Name<span className="pl-1 text-red-500">*</span>
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="text"
                 placeholder="last name"
                 name="lastname"
@@ -97,9 +97,9 @@ class Profile extends Component {
 
 
             <div>
-              <label className="block  font-bold mb-2">Email<span className="mandatory">*</span></label>
+              <label className="block text-white font-bold mb-2">Email<span className="pl-1 text-red-500">*</span></label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="email"
                 placeholder="email"
                 name="email"
@@ -110,11 +110,11 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label className="block  font-bold mb-2">
-                Phone Number<span className="mandatory">*</span>
+              <label className="block text-white font-bold mb-2">
+                Phone Number<span className="pl-1 text-red-500">*</span>
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="tel"
                 placeholder="phone number"
                 name="phone"
@@ -124,11 +124,11 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label className="block  font-bold mb-2">
+              <label className="block text-white font-bold mb-2">
                 Your Website
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="url"
                 placeholder="Ex:- https://www.gecg28.ac.in/"
                 name="website"
@@ -138,9 +138,9 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label className="block  font-bold mb-2">GitHub</label>
+              <label className="block text-white font-bold mb-2">GitHub</label>
               <input
-                className=" block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className=" block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="url"
                 placeholder="Ex:- https://github.com/username"
                 name="github"
@@ -150,11 +150,11 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label className="block  font-bold mb-2">
+              <label className="block text-white font-bold mb-2">
                 LinkedIn
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="url"
                 placeholder="Ex:- https://linkedin.com/in/username"
                 name="linkedin"
@@ -164,11 +164,11 @@ class Profile extends Component {
             </div>
 
             <div>
-              <label className="block  font-bold mb-2">
-                Address<span className="mandatory">*</span>
+              <label className="block text-white font-bold mb-2">
+                Address<span className="pl-1 text-red-500">*</span>
               </label>
               <input
-                className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-full px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                 type="text"
                 placeholder="Ex. Gandhinagar(Only city name)"
                 name="address"
@@ -180,11 +180,11 @@ class Profile extends Component {
           </div>
 
           <div className='my-3'>
-              <label className="block mb-2 text-sm font-medium text-gray-900 dark:" for="file_input">
-                Image<span className="mandatory">*</span>
+              <label className="block text-white mb-2 text-sm font-medium  dark:" for="file_input">
+                Image<span className="pl-1 text-red-500">*</span>
               </label>
               <input
-                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-white dark:text-gray-400 focus:outline-none p-0"
+                className="block w-full text-sm text-gray-900 border-[1px] border-gray-50 rounded-lg cursor-pointer  dark:text-gray-400 focus:outline-none p-0"
                 type="file"
                 id="file_input"
                 name="profile_img_url"
@@ -197,7 +197,7 @@ class Profile extends Component {
 
           <div className="m-3 mt-5 flex justify-between">
                 <button
-                  className='inline-block bg-gray-400 pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full' onClick={this.handleClick}
+                  className='inline-block bg-white pt-2.5 pb-2 disabled:opacity-70  text-gray-700 font-bold py-2 px-4 rounded-full' onClick={this.handleClick}
                 >
                   Back
                 </button>

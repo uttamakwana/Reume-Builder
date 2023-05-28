@@ -67,19 +67,19 @@ class Projects extends Component {
             },
           }}
         />
-      <div className="p-4 bg-clip-padding bg-gray-200 bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
+      <div className="p-4 bg-clip-padding bg-gray-700 bg-opacity-10  rounded-2xl w-[100%] lg:w-[80%] m-auto" style={{backdropFilter: "blur(20px)"}}>
         <div className="p-4">
-              <h3 className="text-2xl font-extrabold  ">Project Details</h3>
+              <h3 className="text-2xl font-extrabold text-white">Project Details</h3>
             </div>
         <div>
           <div className='w-[90%] m-auto'>
             <div className=''>
               <div>
-                <h5 className='my-2 '>Project 1<span className="mandatory">*</span></h5>
+                <h5 className='my-2 text-white'>Project 1<span className="pl-1 text-red-500">*</span></h5>
               </div>
               <div className='my-3'>
                 <input
-                className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_title1"
                   type="text"
                   placeholder='project title*'
@@ -91,7 +91,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_link1"
                   label="project_link1"
                   placeholder='project link'
@@ -103,7 +103,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_time1"
                   placeholder="Ex. April 2023*"
                   type='month'
@@ -115,7 +115,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_description1"
                   placeholder="description*"
                   style={{width: '80%'}}
@@ -131,11 +131,11 @@ class Projects extends Component {
             <br />
             <div className=''>
               <div>
-                <h5 className='my-2 '>Project 2</h5>
+                <h5 className='my-2 text-white '>Project 2</h5>
               </div>
               <div className='my-3'>
                 <input
-                className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_title2"
                   type='text'
                   placeholder='project title*'
@@ -147,7 +147,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_link2"
                   type='text'
                   label="project_link2"
@@ -159,7 +159,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_time2"
                   placeholder="Ex. May 2020*"
                   type='month'
@@ -171,7 +171,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_description2"
                   type='text'
                   placeholder="description*"
@@ -187,11 +187,11 @@ class Projects extends Component {
             <br />
             <div className=''>
               <div>
-                <h5 className='my-2 '>Project 3</h5>
+                <h5 className='my-2 text-white '>Project 3</h5>
               </div>
               <div className='my-3'>
                 <input
-                className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_title3"
                   type='text'
                   placeholder='project title'
@@ -202,7 +202,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_link3"
                   type='text'
                   label="project_link3"
@@ -214,7 +214,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_time3"
                   placeholder="Ex. June 2017"
                   type='month'
@@ -225,7 +225,7 @@ class Projects extends Component {
               </div>
               <div className='my-3'>
                 <input
-                  className="block w-[80%] m-auto px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  className="block w-[80%] m-auto px-3 py-2 border-[1px] border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 sm:text-sm bg-[#3b3b3b] text-white"
                   name="project_description3"
                   type='text'
                   placeholder="description"
