@@ -749,6 +749,19 @@ module.exports = (values) => {
   }
   htmlTemplate += `
               </div>
+              <div class="area-of-interest-even">`;
+  if (interest5 != "" && interest5 != null) {
+    htmlTemplate += `
+                  <strong class="area">|&nbsp;${interest5}</strong>
+                  `;
+  }
+  if (interest6 != "" && interest6 != null) {
+    htmlTemplate += `
+                  <strong class="area">|&nbsp;${interest6}&nbsp;|</strong>
+                  `;
+  }
+  htmlTemplate += `
+              </div>
             </div>
             <div class="references-container">
               <div class="main-heading">
